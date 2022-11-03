@@ -30,12 +30,12 @@ public class FoodItemsImpl implements  FoodItems{
     public List<String> getBreakFastItems() {
 
         List<String> getBFItems=new ArrayList<>();
-        getBFItems.add(" Idli Recipe ");
-        getBFItems.add(" Masala Dosa ");
-        getBFItems.add(" Appam Recipe ");
-        getBFItems.add(" Pongal Recipe ");
-        getBFItems.add(" Rava Pongal ");
-        getBFItems.add(" Medu Vada ");
+        getBFItems.add(" Idli Recipe   : rs : 30 ");
+        getBFItems.add(" Masala Dosa   : rs : 30 ");
+        getBFItems.add(" Appam Recipe  : rs : 50 ");
+        getBFItems.add(" Pongal Recipe : rs : 50 ");
+        getBFItems.add(" Rava Pongal   : rs : 30 ");
+        getBFItems.add(" Medu Vada     : rs : 10 ");
         return getBFItems;
     }
 
@@ -43,8 +43,8 @@ public class FoodItemsImpl implements  FoodItems{
     public List<String> getLunchItems() {
 
         List<String> getLunchItm=new ArrayList<>();
-        getLunchItm.add("Tamarind Rice");
-        getLunchItm.add("Arachu Vitta Sambar");
+        getLunchItm.add("Tamarind Rice       : rs : 30");
+        getLunchItm.add("Arachu Vitta Sambar : rs : 30");
         return getLunchItm;
     }
 }
