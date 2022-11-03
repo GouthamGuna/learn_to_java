@@ -9,10 +9,17 @@ public class MainMethod {
 
         System.out.println(foodList.getMenu());
 
-        System.out.print("Enter Menu name : ");
-        Scanner scanner=new Scanner(System.in);
-        String menuname= scanner.next();
+        int count=100;
 
-        System.out.println(foodList.selectTimingMeals(menuname));
+        for(int i=1; count>=i; i++) {
+
+            System.out.println("Bill Id : "+i+" ");
+
+            System.out.print("Enter Menu name : ");
+            Scanner scanner = new Scanner(System.in);
+            String menuname = scanner.next();
+
+            System.out.println(foodList.selectTimingMeals(menuname));
+        }
     }
 }
