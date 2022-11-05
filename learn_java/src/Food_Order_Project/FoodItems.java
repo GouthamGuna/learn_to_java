@@ -11,4 +11,6 @@ public interface FoodItems {
     List<String> getBreakFastItems();
 
     List<String> getLunchItems();
+
+    Integer addTotalAmount(int price, int qty);
 }

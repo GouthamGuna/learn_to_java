@@ -47,4 +47,9 @@ public class FoodItemsImpl implements  FoodItems{
         getLunchItm.add("Arachu Vitta Sambar : rs : 30");
         return getLunchItm;
     }
+
+    @Override
+    public Integer addTotalAmount(int price, int qty) {
+        return price*qty;
+    }
 }
