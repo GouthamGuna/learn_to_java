@@ -2,14 +2,24 @@ package BusTicketBookingProject;
 
 public class BusDetails {
 
+    private int busNo;
     private String busCompanyName;
     private String acAreNonAc;
     private int totalCapacity;
 
-    public BusDetails(String busCompanyName, String acAreNonAc, int totalCapacity) {
+    public BusDetails(int busNo, String busCompanyName, String acAreNonAc, int totalCapacity) {
+        this.busNo = busNo;
         this.busCompanyName = busCompanyName;
         this.acAreNonAc = acAreNonAc;
         this.totalCapacity = totalCapacity;
+    }
+
+    public int getBusNo() {
+        return busNo;
+    }
+
+    public void setBusNo(int busNo) {
+        this.busNo = busNo;
     }
 
     public String getBusCompanyName() {
@@ -39,9 +49,10 @@ public class BusDetails {
     @Override
     public String toString() {
         return "BusDetails{" +
-                "busCompanyName='" + busCompanyName + '\'' +
+                "busNo=" + busNo +
+                ", busCompanyName='" + busCompanyName + '\'' +
                 ", acAreNonAc='" + acAreNonAc + '\'' +
-                ", totalCapacity='" + totalCapacity + '\'' +
+                ", totalCapacity=" + totalCapacity +
                 '}';
     }
 }
