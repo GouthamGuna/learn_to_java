@@ -15,14 +15,14 @@ public class PassengerDetails {
 
         try(Scanner scanner=new Scanner(System.in)){
 
-            System.out.print("Enter Name : ");
+            /*System.out.print("Enter Name : ");
             String passengerName = scanner.next();
 
             System.out.print("Enter Gender : ");
             String gender = scanner.next();
 
             System.out.print("Enter Age : ");
-            int age = scanner.nextInt();
+            int age = scanner.nextInt();*/
 
             System.out.print("Enter Date dd-MM-yyyy : ");
             String getDate=scanner.next();
