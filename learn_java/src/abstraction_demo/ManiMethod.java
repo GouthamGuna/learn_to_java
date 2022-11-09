@@ -1,4 +1,4 @@
-package Abstraction;
+package abstraction_demo;
 
 public class ManiMethod {
     public static void main(String[] args) {

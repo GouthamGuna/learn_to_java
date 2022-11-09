@@ -1,4 +1,4 @@
-package Abstraction;
+package abstraction_demo;
 
 public class LapTop {
     public String getClassName() {

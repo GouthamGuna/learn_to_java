@@ -1,4 +1,4 @@
-package BusTicketBookingProject;
+package busticket_booking_project;
 
 import java.util.ArrayList;
 import java.util.List;
