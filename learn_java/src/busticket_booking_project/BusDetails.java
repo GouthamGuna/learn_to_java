@@ -1,4 +1,4 @@
-package BusTicketBookingProject;
+package busticket_booking_project;
 
 public class BusDetails {
 
