@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4c1ac41-e47c-418d-b531-975bece38113" name="Changes" comment="" />
+    <list default="true" id="e4c1ac41-e47c-418d-b531-975bece38113" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../classfile_gitcmd/ApplicationClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../classfile_gitcmd/Git cmd.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +39,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/",
+    "last_opened_file_path": "E:/GowthamSankar/gmsk-intellij-WS",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
