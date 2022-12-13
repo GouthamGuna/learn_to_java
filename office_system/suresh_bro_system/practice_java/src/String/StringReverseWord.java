@@ -10,7 +10,9 @@ public class StringReverseWord {
 
             ch=str.charAt(i);
             rstr=ch+rstr;
+
+            System.out.print(i);
         }
-        System.out.println(rstr);
+        System.out.println(" "+rstr);
     }
 }
