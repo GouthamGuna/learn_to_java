@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/office_system.iml" filepath="$PROJECT_DIR$/office_system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice_java_17.iml" filepath="$PROJECT_DIR$/practice_java_17.iml" />
     </modules>
   </component>
 </project>
