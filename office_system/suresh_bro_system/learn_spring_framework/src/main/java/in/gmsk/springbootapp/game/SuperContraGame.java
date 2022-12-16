@@ -1,18 +1,17 @@
 package in.gmsk.springbootapp.game;
 
-public class MarioGame {
+public class SuperContraGame {
 
     public void up(){
-        System.out.println("Jump");
+        System.out.println("Up");
     }
     public void down(){
-        System.out.println("Go into a hole");
+        System.out.println("sit down");
     }
     public void left(){
         System.out.println("Go Back");
     }
     public void right(){
-        System.out.println("Accelerate");
+        System.out.println("Shoot a bullet");
     }
-
 }

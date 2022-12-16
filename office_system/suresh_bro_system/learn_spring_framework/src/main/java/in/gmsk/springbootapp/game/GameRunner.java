@@ -2,13 +2,17 @@ package in.gmsk.springbootapp.game;
 
 public class GameRunner {
 
-    MarioGame marioGame;
+    private SuperContraGame game;
 
-    public GameRunner(MarioGame marioGame) {
-        this.marioGame=marioGame;
+    public GameRunner(SuperContraGame game) {
+        this.game=game;
     }
 
     public void run() {
-        System.out.println("Game Running : "+marioGame);
+        System.out.println("Game Running : "+game);
+        game.up();
+        game.down();
+        game.right();
+        game.left();
     }
 }
