@@ -2,9 +2,9 @@ package in.gmsk.springbootapp.game;
 
 public class GameRunner {
 
-    private SuperContraGame game;
+    private final GameConsole game;
 
-    public GameRunner(SuperContraGame game) {
+    public GameRunner(GameConsole game) {
         this.game=game;
     }
 
