@@ -1,13 +1,14 @@
 package exception;
 
-import java.sql.SQLException;
-import java.util.logging.Logger;
-
 public class CustomExceptions extends Exception{
 
-    private static final Logger LOGGER=Logger.getLogger(String.valueOf(CustomExceptions.class));
+    String message;
 
-    public CustomExceptions(SQLException ignoredE) {
-        LOGGER.info("Some Thing Wrong!");
+    public CustomExceptions(String ignoredE) {
+        message= String.valueOf(ignoredE);
+    }
+
+    public String toString(){
+        return ("Custom Exception Occurred : "+message);
     }
 }

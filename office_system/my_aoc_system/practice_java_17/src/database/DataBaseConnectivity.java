@@ -15,29 +15,36 @@ public class DataBaseConnectivity {
     static final String QUERY = "SELECT `employeecode` FROM `campus_user` WHERE `username`='admin@stannesmaryland'";
 
     public static void main(String[] args) throws SQLException, CustomExceptions {
-        logger.info("Starting");
+        logger.info("DataBase Connected Successfully!");
 
             Connection conn = null;
             Statement stmt = null;
+            //boolean rs = false;
             ResultSet rs = null;
 
         try {
             conn= DriverManager.getConnection(DB_URL, USER, SECRET);
             stmt = conn.createStatement();
-            rs = stmt.executeQuery(QUERY);
+            //rs = stmt.execute(QUERY);
+           rs = stmt.executeQuery(QUERY);
 
             while (rs.next()) {
-                logger.info("EMPID : " + rs.getInt("employeecode"));
+                logger.info("EMPID : " + rs.getString("employeecode"));
             }
 
+            /*if(rs){
+                stmt.getResultSet();
+                logger.info("execute  : "+  stmt.getResultSet());
+            }*/
+
         } catch (SQLException e) {
-            throw new CustomExceptions(e);
-        }finally {
+             throw new CustomExceptions(e.getMessage());
+        } finally {
             assert rs != null;
             rs.close();
             stmt.close();
             conn.close();
         }
-        logger.info("end");
+        logger.info("DataBase Connection Closed!");
     }
 }
