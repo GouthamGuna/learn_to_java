@@ -13,13 +13,15 @@ public class MainMethod {
 
         for(int i=1; count>=i; i++) {
 
+            System.out.println("----------------------------------------------");
+
             System.out.println("Bill Id : "+i+" ");
 
             System.out.print("Enter Menu name : ");
             Scanner scanner = new Scanner(System.in);
-            String menuname = scanner.next();
+            int menuName = scanner.nextInt();
 
-            System.out.println(foodList.selectTimingMeals(menuname));
+            foodList.getMealList(menuName);
         }
     }
 }
