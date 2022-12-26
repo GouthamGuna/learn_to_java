@@ -8,4 +8,5 @@ public interface ATMFunctions {
      List<String> addService();
 
      void chooseService(int whatYouWant);
+
 }
