@@ -7,7 +7,7 @@ public class MainMethod {
 
         FoodItemsImpl foodList=new FoodItemsImpl();
 
-        System.out.println(foodList.getMenu());
+        foodList.getMenu();
 
         int count=100;
 

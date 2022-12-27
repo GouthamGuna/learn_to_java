@@ -8,13 +8,15 @@ import java.util.Scanner;
 public class FoodItemsImpl implements  FoodItems{
 
     @Override
-    public List<String> getMenu() {
+    public void getMenu() {
 
         List<String> getMenuList=new ArrayList<>();
         getMenuList.add("Press 1 : Breakfast");
         getMenuList.add("Press 2 : Lunch");
         getMenuList.add("Press 3 : Dinner");
-        return getMenuList;
+        getMenuList.add("Press 4 : Exit");
+
+        getMenuList.forEach(System.out::println);
     }
 
     @Override
@@ -24,21 +26,34 @@ public class FoodItemsImpl implements  FoodItems{
 
         switch (menuNo){
             case 1 :{
-                getBreakFastItems();
+                    getBreakFastItems();
 
-                System.out.print("Enter the Break Fast ID : ");
-                int bfId = scanner.nextInt();
+                    System.out.print("Enter the Break Fast ID : ");
+                    int bfId = scanner.nextInt();
 
-                System.out.print("Enter the Qty : ");
-                int qty = scanner.nextInt();
+                    System.out.print("Enter the Qty : ");
+                    int qty = scanner.nextInt();
 
-                int total = addTotalAmount(setAmount(bfId),qty);
+                    int total = addTotalAmount(setAmount(bfId), qty);
 
-                System.out.println("Total Amount : "+total);
-
-                System.out.println("----------------------------------------------");
+                    System.out.println("Total Amount : " + total);
+                    System.out.println("----------------------------------------------");
             }
-            case 2 : getLunchItems();
+            case 2 : {
+                    getLunchItems();
+
+                    System.out.print("Enter the Lunch ID : ");
+                    int lunId = scanner.nextInt();
+
+                    System.out.print("Enter the Qty : ");
+                    int qty = scanner.nextInt();
+
+                    int total = addTotalAmount(setAmount(lunId), qty);
+
+                    System.out.println("Total Amount : " + total);
+                    System.out.println("----------------------------------------------");
+            }
+            case 3 : System.exit(0);
         }
     }
 
@@ -53,18 +68,19 @@ public class FoodItemsImpl implements  FoodItems{
         getBFItems.add("5 : Rava Pongal   : rs : 30 ");
         getBFItems.add("6 : Medu Vada     : rs : 10 ");
 
-        System.out.println(" ");
         getBFItems.forEach(System.out::println);
         System.out.println(" ");
     }
 
     @Override
-    public List<String> getLunchItems() {
+    public void getLunchItems() {
 
         List<String> getLunchItm=new ArrayList<>();
         getLunchItm.add("7 : Tamarind Rice       : rs : 30");
         getLunchItm.add("8 : Arachu Vitta Sambar : rs : 30");
-        return getLunchItm;
+
+        getLunchItm.forEach(System.out::print);
+        System.out.println(" ");
     }
 
     @Override
@@ -75,15 +91,15 @@ public class FoodItemsImpl implements  FoodItems{
     @Override
     public int setAmount(int mealAmount) {
 
-        HashMap<Integer, Integer> getAmount =new HashMap<>();
-        getAmount.put(1, 30);
-        getAmount.put(2, 30);
-        getAmount.put(3, 50);
-        getAmount.put(4, 50);
-        getAmount.put(5, 30);
-        getAmount.put(6, 10);
-        getAmount.put(7, 30);
-        getAmount.put(8, 30);
+        HashMap<String, Integer> getAmount =new HashMap<>();
+        getAmount.put("1", 30);
+        getAmount.put("2", 30);
+        getAmount.put("3", 50);
+        getAmount.put("4", 50);
+        getAmount.put("5", 30);
+        getAmount.put("6", 10);
+        getAmount.put("7", 30);
+        getAmount.put("8", 30);
 
         return getAmount.get(mealAmount);
     }
