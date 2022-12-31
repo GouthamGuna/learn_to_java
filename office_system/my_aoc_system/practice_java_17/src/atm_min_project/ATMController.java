@@ -12,5 +12,4 @@ public class ATMController extends ATMService{
     public void chooseService(int whatYouWant) {
         super.chooseService(whatYouWant);
     }
-
 }
