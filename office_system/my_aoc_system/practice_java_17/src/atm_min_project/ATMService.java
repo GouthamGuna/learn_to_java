@@ -1,9 +1,6 @@
 package atm_min_project;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ATMService implements ATMFunctions{
 
@@ -11,7 +8,7 @@ public class ATMService implements ATMFunctions{
     private static final HashMap<Integer, Integer> validate;
 
     static {
-        atmUser = new ArrayList<>();
+        atmUser = new LinkedList<>();
         validate = new HashMap<>();
     }
 
@@ -64,21 +61,30 @@ public class ATMService implements ATMFunctions{
                     System.out.print("Enter money to be withdrawn : ");
                     withdraw = sc.nextInt();
 
-                    if(balance >= withdraw)
-                    {
-                        balance = balance - withdraw;
-                        System.out.println("Please collect your money");
-                    }
-                    else
-                    {
-                        System.out.println("Insufficient Balance");
-                    }
-                    System.out.println(" ");
+                    for(UserPojo pojo: atmUser){
 
+                        if(pojo.accountNo() == validateUsers(secret)){
+
+                            if(pojo.maxBalance() >= withdraw)
+                            {
+                                balance = pojo.maxBalance() - withdraw;
+                                System.out.println("Please collect your money");
+                                System.out.println(" ");
+                                System.out.println("Total Amount : "+balance);
+                            }
+                            else {
+                                System.out.println("Insufficient Balance");
+                            }
+                            System.out.println(" ");
+                        }else {
+                            System.out.println("Contact Us Bank if your account number is invalid!");
+                        }
+                    }
                 }else {
                     System.out.println("Invalid Pin Try Again Later");
                 }
             }
+
             case 2 -> {
                 System.out.print("Enter Your ATM PIN Number : ");
                 int secret = sc.nextInt();
@@ -87,26 +93,46 @@ public class ATMService implements ATMFunctions{
 
                     System.out.println("Account No : " + validateUsers(secret));
 
-                    System.out.print("Enter money to be deposited : ");
-                    deposit = sc.nextInt();
+                    for(UserPojo pojo: atmUser) {
 
-                    balance = balance + deposit;
-                    System.out.println("Your Money has been successfully Deposite ");
-                    System.out.println("Total Balance : " + balance);
-                    System.out.println(" ");
+                        if(pojo.accountNo() == validateUsers(secret)){
+
+                            System.out.println("Account Holder : "+pojo.userName());
+                            System.out.print("Enter money to be deposited : ");
+                            deposit = sc.nextInt();
+
+                            int dopBalance = pojo.maxBalance() + deposit;
+                            System.out.println("Your Money has been successfully Deposite ");
+                            System.out.println("Total Balance : " + dopBalance);
+                            System.out.println(" ");
+                        } else {
+                            System.out.println("Contact Us Bank if your account number is invalid!");
+                        }
+                    }
                 }else {
                     System.out.println("Invalid Pin Try Again Later");
                 }
             }
+
             case 1 -> {
                 System.out.print("Enter Your ATM PIN Number : ");
                 int secret = sc.nextInt();
 
                 if(validateUsers(secret) !=0) {
-                    System.out.println("Account No : " + validateUsers(secret));
 
-                    System.out.println("Balance : " + balance);
-                    System.out.println(" ");
+                    for(UserPojo pojo: atmUser) {
+
+                        if(pojo.accountNo() == validateUsers(secret)) {
+
+                            System.out.println("Account Holder : " + pojo.userName());
+                            System.out.println("Account No : " + pojo.accountNo());
+
+                            System.out.println("Balance : " + pojo.maxBalance());
+                            System.out.println(" ");
+                        }else{
+                            System.out.println("Contact Us Bank if your account number is invalid!");
+                        }
+                    }
                 }else {
                     System.out.println("Invalid Pin Try Again Later");
                 }
