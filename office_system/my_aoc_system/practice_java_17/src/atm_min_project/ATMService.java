@@ -13,7 +13,7 @@ public class ATMService implements ATMFunctions{
     }
 
     @Override
-    public List<String> addService() {
+    public void addService() {
 
         List<String> atmService=new ArrayList<>();
         atmService.add("Press : 1 ====> Check Balance");
@@ -22,14 +22,13 @@ public class ATMService implements ATMFunctions{
         atmService.add("Press : 4 ====> Add ATM User");
         atmService.add("Press : 5 ====> Exit");
         atmService.forEach(System.out::println);
-        return atmService;
     }
 
     @Override
     public void chooseService(int whatYouWant) {
 
         Scanner sc = new Scanner(System.in);
-        int balance = 100, withdraw, deposit;
+        double balance = 100.0, withdraw, deposit;
 
         switch (whatYouWant) {
 
@@ -45,7 +44,7 @@ public class ATMService implements ATMFunctions{
                 System.out.print("Set ATM Card Pin : ");
                 int secret = sc.nextInt();
 
-                atmUser.add(new UserPojo(userName, accNo, secret, 0,0));
+                atmUser.add(new UserPojo(userName, accNo, secret, 0.0,0.0));
                 validate.put(secret, accNo);
                 System.out.println("ATM User Added Successfully :-) ");
             }
@@ -101,7 +100,7 @@ public class ATMService implements ATMFunctions{
                             System.out.print("Enter money to be deposited : ");
                             deposit = sc.nextInt();
 
-                            int dopBalance = pojo.maxBalance() + deposit;
+                            double dopBalance = pojo.maxBalance() + deposit;
                             System.out.println("Your Money has been successfully Deposite ");
                             System.out.println("Total Balance : " + dopBalance);
                             System.out.println(" ");

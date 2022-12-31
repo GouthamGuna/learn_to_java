@@ -6,7 +6,6 @@ public class MainMethod {
 
     public static void main(String[] args) {
         ATMController atmController=new ATMController();
-
         atmController.addService();
         System.out.println("-----------------------------------------------");
 

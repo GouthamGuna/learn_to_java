@@ -1,9 +1,8 @@
 package atm_min_project;
-import java.util.List;
 
 public interface ATMFunctions {
 
-     List<String> addService();
+     void addService();
 
      void chooseService(int whatYouWant);
 
