@@ -6,10 +6,12 @@ public class ATMService implements ATMFunctions{
 
     private static final List<UserPojo> atmUser;
     private static final HashMap<Integer, Integer> validate;
+    private static final HashSet<Integer> storeAccountNo;
 
     static {
         atmUser = new LinkedList<>();
         validate = new HashMap<>();
+        storeAccountNo = new HashSet<>();
     }
 
     @Override
@@ -38,15 +40,27 @@ public class ATMService implements ATMFunctions{
                 System.out.print("Enter Your Name : ");
                 String userName = sc.next();
 
-                System.out.print("Enter Your Account No : ");
-                int accNo = sc.nextInt();
+                if(userName.matches("^[a-zA-Z]*$")) {
 
-                System.out.print("Set ATM Card Pin : ");
-                int secret = sc.nextInt();
+                    System.out.print("Enter Your Account No : ");
+                    int accNo = sc.nextInt();
 
-                atmUser.add(new UserPojo(userName, accNo, secret, 0.0,0.0));
-                validate.put(secret, accNo);
-                System.out.println("ATM User Added Successfully :-) ");
+                    if (!storeAccountNo.contains(accNo)) {
+
+                        System.out.print("Set ATM Card Pin : ");
+                        int secret = sc.nextInt();
+
+                        storeAccountNo.add(accNo);
+                        validate.put(secret, accNo);
+                        atmUser.add(new UserPojo(userName, accNo, secret, 0.0, 0.0));
+                        System.out.println("ATM User Added Successfully :-) ");
+
+                    } else {
+                        System.out.println(" XXXXXX - Account Number has already served another client! Contact Us: Your Bank");
+                    }
+                }else {
+                    System.out.println("Only characters are used in the account holder's name.");
+                }
             }
 
             case 3 -> {
@@ -74,7 +88,6 @@ public class ATMService implements ATMFunctions{
                             else {
                                 System.out.println("Insufficient Balance");
                             }
-                            System.out.println(" ");
                         }else {
                             System.out.println("Contact Us Bank if your account number is invalid!");
                         }
@@ -146,4 +159,5 @@ public class ATMService implements ATMFunctions{
 
         return validate.getOrDefault(secret, 0);
     }
+
 }
