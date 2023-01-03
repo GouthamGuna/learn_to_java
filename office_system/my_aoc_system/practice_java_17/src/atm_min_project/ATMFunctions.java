@@ -7,4 +7,6 @@ public interface ATMFunctions {
      void chooseService(int whatYouWant);
 
      int validateUsers(int secret);
+
+     int countLength(int secret);
 }

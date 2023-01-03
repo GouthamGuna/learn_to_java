@@ -6,12 +6,10 @@ public class ATMService implements ATMFunctions{
 
     private static final List<UserPojo> atmUser;
     private static final HashMap<Integer, Integer> validate;
-    private static final HashSet<Integer> storeAccountNo;
 
     static {
         atmUser = new LinkedList<>();
         validate = new HashMap<>();
-        storeAccountNo = new HashSet<>();
     }
 
     @Override
@@ -30,7 +28,7 @@ public class ATMService implements ATMFunctions{
     public void chooseService(int whatYouWant) {
 
         Scanner sc = new Scanner(System.in);
-        double balance = 100.0, withdraw, deposit;
+        int balance, withdraw, deposit, dopBalance;
 
         switch (whatYouWant) {
 
@@ -45,16 +43,24 @@ public class ATMService implements ATMFunctions{
                     System.out.print("Enter Your Account No : ");
                     int accNo = sc.nextInt();
 
-                    if (!storeAccountNo.contains(accNo)) {
+                    if (!validate.containsValue(accNo)) {
 
                         System.out.print("Set ATM Card Pin : ");
                         int secret = sc.nextInt();
 
-                        storeAccountNo.add(accNo);
-                        validate.put(secret, accNo);
-                        atmUser.add(new UserPojo(userName, accNo, secret, 0.0, 0.0));
-                        System.out.println("ATM User Added Successfully :-) ");
+                        if (!validate.containsKey(secret)) {
 
+                           // if(countLength(secret) >= 4) {
+
+                                validate.put(secret, accNo);
+                                atmUser.add(new UserPojo(userName, accNo, secret, 0, 0));
+                                System.out.println("ATM User Added Successfully :-) ");
+                          //  }else{
+                              //  System.out.println("The pin only contains four numbers.");
+                          //  }
+                        }else {
+                            System.out.println("A Distinct Pin Number. Try Again!");
+                        }
                     } else {
                         System.out.println(" XXXXXX - Account Number has already served another client! Contact Us: Your Bank");
                     }
@@ -68,7 +74,7 @@ public class ATMService implements ATMFunctions{
                 int secret = sc.nextInt();
 
                 if(validateUsers(secret) != 0) {
-
+                    System.out.println(validateUsers(secret) != 0);
                     System.out.println("Account No : " + validateUsers(secret));
 
                     System.out.print("Enter money to be withdrawn : ");
@@ -78,12 +84,12 @@ public class ATMService implements ATMFunctions{
 
                         if(pojo.accountNo() == validateUsers(secret)){
 
-                            if(pojo.maxBalance() >= withdraw)
-                            {
+                            if(pojo.maxBalance() >= withdraw) {
                                 balance = pojo.maxBalance() - withdraw;
                                 System.out.println("Please collect your money");
                                 System.out.println(" ");
                                 System.out.println("Total Amount : "+balance);
+                                atmUser.add(new UserPojo(pojo.userName(),pojo.accountNo(),pojo.atmSecret(), balance,pojo.minBalance()));
                             }
                             else {
                                 System.out.println("Insufficient Balance");
@@ -113,10 +119,15 @@ public class ATMService implements ATMFunctions{
                             System.out.print("Enter money to be deposited : ");
                             deposit = sc.nextInt();
 
-                            double dopBalance = pojo.maxBalance() + deposit;
-                            System.out.println("Your Money has been successfully Deposite ");
-                            System.out.println("Total Balance : " + dopBalance);
-                            System.out.println(" ");
+                           // if(500 <= deposit) {
+                                dopBalance = pojo.maxBalance() + deposit;
+                                System.out.println("Your Money has been successfully Deposite ");
+                                System.out.println("Total Balance : " + dopBalance);
+                                System.out.println(" ");
+                           /* }else {
+                                System.out.println("A Deposit of at least rs.500 is required.");
+                            }*/
+
                         } else {
                             System.out.println("Contact Us Bank if your account number is invalid!");
                         }
@@ -160,4 +171,17 @@ public class ATMService implements ATMFunctions{
         return validate.getOrDefault(secret, 0);
     }
 
+    @Override
+    public int countLength(int secret) {
+
+        int count = 0;
+
+        while (secret != 0){
+
+            secret = secret/10;
+            count = count+1;
+        }
+
+        return count;
+    }
 }

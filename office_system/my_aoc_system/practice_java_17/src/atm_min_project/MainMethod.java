@@ -17,7 +17,9 @@ public class MainMethod {
             int count = 1000;
 
             for (int i=1; count>=i; i++) {
+
                 atmController.getData(String.valueOf(localDateTime));
+
                 System.out.print("ATM SR NO : "+i+" : Enter Your Service NO : ");
                 int serNo = scanner.nextInt();
 
