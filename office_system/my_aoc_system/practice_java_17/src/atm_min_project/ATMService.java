@@ -1,6 +1,7 @@
 package atm_min_project;
 
 import java.util.*;
+import java.util.function.Predicate;
 
 public class ATMService implements ATMFunctions{
 
@@ -74,22 +75,21 @@ public class ATMService implements ATMFunctions{
                 int secret = sc.nextInt();
 
                 if(validateUsers(secret) != 0) {
-                    System.out.println(validateUsers(secret) != 0);
-                    System.out.println("Account No : " + validateUsers(secret));
 
+                    System.out.println("Account No : " + validateUsers(secret));
                     System.out.print("Enter money to be withdrawn : ");
                     withdraw = sc.nextInt();
 
-                    for(UserPojo pojo: atmUser){
+                    for(UserPojo pojo: findByUser(secret)){
 
-                        if(pojo.accountNo() == validateUsers(secret)){
+                        if(pojo.getAccountNo() == validateUsers(secret)){
 
-                            if(pojo.maxBalance() >= withdraw) {
-                                balance = pojo.maxBalance() - withdraw;
+                            if(pojo.getMaxBalance() >= withdraw) {
+                                balance = pojo.getMaxBalance() - withdraw;
                                 System.out.println("Please collect your money");
                                 System.out.println(" ");
                                 System.out.println("Total Amount : "+balance);
-                                atmUser.add(new UserPojo(pojo.userName(),pojo.accountNo(),pojo.atmSecret(), balance,pojo.minBalance()));
+                                 pojo.setMaxBalance(balance);
                             }
                             else {
                                 System.out.println("Insufficient Balance");
@@ -109,21 +109,21 @@ public class ATMService implements ATMFunctions{
 
                 if(validateUsers(secret) !=0) {
 
-                    System.out.println("Account No : " + validateUsers(secret));
+                    for(UserPojo pojo:findByUser(secret)) {
 
-                    for(UserPojo pojo: atmUser) {
+                        if(pojo.getAccountNo() == validateUsers(secret)){
 
-                        if(pojo.accountNo() == validateUsers(secret)){
-
-                            System.out.println("Account Holder : "+pojo.userName());
+                            System.out.println("Account Holder : "+pojo.getUserName());
+                            System.out.println("Account No : " + pojo.getAccountNo());
                             System.out.print("Enter money to be deposited : ");
                             deposit = sc.nextInt();
 
                            // if(500 <= deposit) {
-                                dopBalance = pojo.maxBalance() + deposit;
+                                dopBalance = pojo.getMaxBalance() + deposit;
                                 System.out.println("Your Money has been successfully Deposite ");
-                                System.out.println("Total Balance : " + dopBalance);
                                 System.out.println(" ");
+                                System.out.println("Total Balance : " + dopBalance);
+                                pojo.setMaxBalance(dopBalance);
                            /* }else {
                                 System.out.println("A Deposit of at least rs.500 is required.");
                             }*/
@@ -143,15 +143,13 @@ public class ATMService implements ATMFunctions{
 
                 if(validateUsers(secret) !=0) {
 
-                    for(UserPojo pojo: atmUser) {
+                    for(UserPojo pojo: findByUser(secret)) {
 
-                        if(pojo.accountNo() == validateUsers(secret)) {
-
-                            System.out.println("Account Holder : " + pojo.userName());
-                            System.out.println("Account No : " + pojo.accountNo());
-
-                            System.out.println("Balance : " + pojo.maxBalance());
+                        if(pojo.getAccountNo() == validateUsers(secret)) {
+                            System.out.println("Account Holder Name : " + pojo.getUserName());
+                            System.out.println("Account No : " + pojo.getAccountNo());
                             System.out.println(" ");
+                            System.out.println("Balance : " + pojo.getMaxBalance());
                         }else{
                             System.out.println("Contact Us Bank if your account number is invalid!");
                         }
@@ -183,5 +181,11 @@ public class ATMService implements ATMFunctions{
         }
 
         return count;
+    }
+    @Override
+    public List<UserPojo> findByUser(int secret) {
+
+        Predicate<? super UserPojo> predicate = userPojo -> userPojo.getAtmSecret() == secret;
+        return atmUser.stream().filter(predicate).toList();
     }
 }
