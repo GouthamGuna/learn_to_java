@@ -80,23 +80,46 @@ public class ATMService implements ATMFunctions{
                     System.out.print("Enter money to be withdrawn : ");
                     withdraw = sc.nextInt();
 
-                    for(UserPojo pojo: findByUser(secret)){
+                    if(withdraw == 500 || withdraw == 1000) {
 
-                        if(pojo.getAccountNo() == validateUsers(secret)){
+                        for (UserPojo pojo : findByUser(secret)) {
 
-                            if(pojo.getMaxBalance() >= withdraw) {
-                                balance = pojo.getMaxBalance() - withdraw;
-                                System.out.println("Please collect your money");
-                                System.out.println(" ");
-                                System.out.println("Total Amount : "+balance);
-                                 pojo.setMaxBalance(balance);
+                            if (pojo.getAccountNo() == validateUsers(secret)) {
+
+                                    if (pojo.getMaxBalance() >= withdraw) {
+                                        balance = pojo.getMaxBalance() - withdraw;
+                                        System.out.println("Please collect your money");
+                                        System.out.println(" ");
+                                        System.out.println("Total Amount : " + balance);
+                                        pojo.setMaxBalance(balance);
+                                    } else {
+                                        System.out.println("Insufficient Balance");
+                                    }
+                            } else {
+                                System.out.println("Contact Us Bank if your account number is invalid!");
                             }
-                            else {
-                                System.out.println("Insufficient Balance");
-                            }
-                        }else {
-                            System.out.println("Contact Us Bank if your account number is invalid!");
                         }
+                    }else if(withdraw == 2000 || withdraw == 5000){
+
+                        for (UserPojo pojo : findByUser(secret)) {
+
+                            if (pojo.getAccountNo() == validateUsers(secret)) {
+
+                                    if (pojo.getMaxBalance() >= withdraw) {
+                                        balance = pojo.getMaxBalance() - withdraw;
+                                        System.out.println("Please collect your money");
+                                        System.out.println(" ");
+                                        System.out.println("Total Amount : " + balance);
+                                        pojo.setMaxBalance(balance);
+                                    } else {
+                                        System.out.println("Insufficient Balance");
+                                    }
+                            } else {
+                                System.out.println("Contact Us Bank if your account number is invalid!");
+                            }
+                        }
+                    }else{
+                        System.out.println("Withdraw amounts between Rs. 500 and 1000 and between Rs. 2000 and 5000 only.");
                     }
                 }else {
                     System.out.println("Invalid Pin Try Again Later");
@@ -118,16 +141,15 @@ public class ATMService implements ATMFunctions{
                             System.out.print("Enter money to be deposited : ");
                             deposit = sc.nextInt();
 
-                           // if(500 <= deposit) {
+                            if(500 <= deposit) {
                                 dopBalance = pojo.getMaxBalance() + deposit;
                                 System.out.println("Your Money has been successfully Deposite ");
                                 System.out.println(" ");
                                 System.out.println("Total Balance : " + dopBalance);
                                 pojo.setMaxBalance(dopBalance);
-                           /* }else {
+                            }else {
                                 System.out.println("A Deposit of at least rs.500 is required.");
-                            }*/
-
+                            }
                         } else {
                             System.out.println("Contact Us Bank if your account number is invalid!");
                         }
