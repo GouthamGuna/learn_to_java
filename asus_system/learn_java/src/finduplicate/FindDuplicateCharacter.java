@@ -20,8 +20,8 @@ public class FindDuplicateCharacter {
                 int totalNODuplicate = 0;
 
                 for(int i=0; c>i; i++){
-                    totalNODuplicate++;
                     System.out.println(totalNODuplicate);
+                    totalNODuplicate++;
                 }
             }else {
                 getCharacter.add(c);
