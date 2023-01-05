@@ -31,8 +31,8 @@ public class MainMethod {
             }
 
         }catch (Exception e){
-         //   e.printStackTrace();
-            System.out.println("Something went wrong!");
+           // e.printStackTrace();
+            System.out.println("Something went wrong! : "+e);
         }
     }
 }
