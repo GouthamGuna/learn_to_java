@@ -1,5 +1,7 @@
 package food_order_project;
 
+import java.io.IOException;
+
 public interface FoodItems {
 
     void getMenu();
@@ -13,4 +15,6 @@ public interface FoodItems {
     int addTotalAmount(int price, int qty);
 
     int setAmount(int mealName);
+
+    void getHeaderWithStart() throws IOException;
 }

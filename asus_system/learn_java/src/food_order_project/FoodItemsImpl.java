@@ -1,5 +1,7 @@
 package food_order_project;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +17,8 @@ public class FoodItemsImpl implements  FoodItems{
         getMenuList.add("Press 2 : Lunch");
        // getMenuList.add("Press 3 : Dinner");
         getMenuList.add("Press 3 : Exit");
-
+        System.out.println(" ");
+        System.out.println(" ");
         getMenuList.forEach(System.out::println);
     }
 
@@ -103,5 +106,16 @@ public class FoodItemsImpl implements  FoodItems{
         getAmount.put(8, 30);
 
         return getAmount.getOrDefault(mealAmount,0);
+    }
+
+    @Override
+    public void getHeaderWithStart() throws IOException {
+        FileReader fileReader=new FileReader("cat.txt");
+        int data = fileReader.read();
+        while (data != -1){
+            System.out.print((char) data);
+            data = fileReader.read();
+        }
+        fileReader.close();
     }
 }
