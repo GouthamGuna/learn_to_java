@@ -8,5 +8,3 @@ Advantages:
         It is designed to allow all the sub-classes to choose the type of objects so as to create them.
 
 Function : 
-
-<img src="C:\Users\User\Desktop\creationDP_FactoryDP.svg"/>
