@@ -4,7 +4,7 @@ public interface FoodItems {
 
     void getMenu();
 
-    void getMealList(int item);
+    void getMealList(int item, int userId);
 
     void getBreakFastItems();
 

@@ -7,21 +7,19 @@ public class MainMethod {
 
         FoodItemsImpl foodList=new FoodItemsImpl();
 
-        foodList.getMenu();
-
         int count=100;
 
         for(int i=1; count>=i; i++) {
-
+            foodList.getMenu();
             System.out.println("----------------------------------------------");
 
-            System.out.println("Bill Id : "+i+" ");
+            System.out.println("Bill No : "+i+" ");
 
-            System.out.print("Enter Menu name : ");
+            System.out.print("Enter Food Menu Id : ");
             Scanner scanner = new Scanner(System.in);
             int menuName = scanner.nextInt();
 
-            foodList.getMealList(menuName);
+            foodList.getMealList(menuName, i);
         }
     }
 }
