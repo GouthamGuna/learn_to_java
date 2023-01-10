@@ -12,7 +12,7 @@ import lombok.*;
         name = "student_registration",
         uniqueConstraints = @UniqueConstraint(
                 name = "emilId_unique",
-                columnNames = "email_address"
+                columnNames = "emailAddress"
         )
 )
 public class Student {
@@ -27,15 +27,16 @@ public class Student {
             strategy =  GenerationType.SEQUENCE,
             generator = "student_sequence"
     )
+
     private int Id;
-    private String first_name;
-    private String last_name;
+    private String firstName;
+    private String lastName;
     @Column(
-            name = "email_address",
+            name = "emailAddress",
             nullable = false
     )
     private String email_id;
-    private String parent_name;
-    private String parent_mailId;
-    private String parent_mobileNo;
+
+    @Embedded
+    private Guardian guardian;
 }
