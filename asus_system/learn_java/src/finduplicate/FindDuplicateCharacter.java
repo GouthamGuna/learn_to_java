@@ -16,13 +16,6 @@ public class FindDuplicateCharacter {
         for (char c: userInput.toCharArray()){
             if (getCharacter.contains(c)){
                 System.out.println("Duplicate is : "+c);
-
-                int totalNODuplicate = 0;
-
-                for(int i=0; c>i; i++){
-                    totalNODuplicate++;
-                    System.out.println(totalNODuplicate);
-                }
             }else {
                 getCharacter.add(c);
             }

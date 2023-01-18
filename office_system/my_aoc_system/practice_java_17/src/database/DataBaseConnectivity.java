@@ -1,7 +1,5 @@
 package database;
 
-import exception.CustomExceptions;
-
 import java.sql.*;
 import java.util.logging.Logger;
 
@@ -14,7 +12,7 @@ public class DataBaseConnectivity {
     static final String SECRET = "root";
     static final String QUERY = "SELECT `employeecode` FROM `campus_user` WHERE `username`='admin@stannesmaryland'";
 
-    public static void main(String[] args) throws SQLException, CustomExceptions {
+    public static void main(String[] args) throws SQLException {
         logger.info("DataBase Connected Successfully!");
 
             Connection conn = null;
@@ -32,13 +30,8 @@ public class DataBaseConnectivity {
                 logger.info("EMPID : " + rs.getString("employeecode"));
             }
 
-            /*if(rs){
-                stmt.getResultSet();
-                logger.info("execute  : "+  stmt.getResultSet());
-            }*/
-
         } catch (SQLException e) {
-             throw new CustomExceptions(e.getMessage());
+            e.printStackTrace();
         } finally {
             assert rs != null;
             rs.close();

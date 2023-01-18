@@ -1,5 +1,7 @@
 package food_order_project;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,19 +15,20 @@ public class FoodItemsImpl implements  FoodItems{
         List<String> getMenuList=new ArrayList<>();
         getMenuList.add("Press 1 : Breakfast");
         getMenuList.add("Press 2 : Lunch");
-        getMenuList.add("Press 3 : Dinner");
-        getMenuList.add("Press 4 : Exit");
-
+       // getMenuList.add("Press 3 : Dinner");
+        getMenuList.add("Press 3 : Exit");
+        System.out.println(" ");
+        System.out.println(" ");
         getMenuList.forEach(System.out::println);
     }
 
     @Override
-    public void getMealList(int menuNo) {
+    public void getMealList(int menuNo, int userId) {
 
         Scanner scanner=new Scanner(System.in);
 
         switch (menuNo){
-            case 1 :{
+            case 1 -> {
                     getBreakFastItems();
 
                     System.out.print("Enter the Break Fast ID : ");
@@ -38,8 +41,9 @@ public class FoodItemsImpl implements  FoodItems{
 
                     System.out.println("Total Amount : " + total);
                     System.out.println("----------------------------------------------");
+
             }
-            case 2 : {
+            case 2 -> {
                     getLunchItems();
 
                     System.out.print("Enter the Lunch ID : ");
@@ -53,7 +57,7 @@ public class FoodItemsImpl implements  FoodItems{
                     System.out.println("Total Amount : " + total);
                     System.out.println("----------------------------------------------");
             }
-            case 3 : System.exit(0);
+            case 3 -> System.exit(0);
         }
     }
 
@@ -79,7 +83,7 @@ public class FoodItemsImpl implements  FoodItems{
         getLunchItm.add("7 : Tamarind Rice       : rs : 30");
         getLunchItm.add("8 : Arachu Vitta Sambar : rs : 30");
 
-        getLunchItm.forEach(System.out::print);
+        getLunchItm.forEach(System.out::println);
         System.out.println(" ");
     }
 
@@ -91,16 +95,27 @@ public class FoodItemsImpl implements  FoodItems{
     @Override
     public int setAmount(int mealAmount) {
 
-        HashMap<String, Integer> getAmount =new HashMap<>();
-        getAmount.put("1", 30);
-        getAmount.put("2", 30);
-        getAmount.put("3", 50);
-        getAmount.put("4", 50);
-        getAmount.put("5", 30);
-        getAmount.put("6", 10);
-        getAmount.put("7", 30);
-        getAmount.put("8", 30);
+        HashMap<Integer, Integer> getAmount =new HashMap<>();
+        getAmount.put(1, 30);
+        getAmount.put(2, 30);
+        getAmount.put(3, 50);
+        getAmount.put(4, 50);
+        getAmount.put(5, 30);
+        getAmount.put(6, 10);
+        getAmount.put(7, 30);
+        getAmount.put(8, 30);
 
-        return getAmount.get(mealAmount);
+        return getAmount.getOrDefault(mealAmount,0);
+    }
+
+    @Override
+    public void getHeaderWithStart() throws IOException {
+        FileReader fileReader=new FileReader("cat.txt");
+        int data = fileReader.read();
+        while (data != -1){
+            System.out.print((char) data);
+            data = fileReader.read();
+        }
+        fileReader.close();
     }
 }
