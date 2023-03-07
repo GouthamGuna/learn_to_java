@@ -5,13 +5,12 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "setup_school")
+@Table(name = "school_details")
 public class SchoolDto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String address1;
-    private String address2;
+    private String address;
     private String schoolName;
     private String schoolAffiliationNo;
     private String mobileNo;
@@ -25,5 +24,4 @@ public class SchoolDto {
     private String website;
     private String emailId;
     private String personalEmailId;
-
 }

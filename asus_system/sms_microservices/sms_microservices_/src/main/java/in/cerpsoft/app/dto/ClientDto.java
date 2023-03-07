@@ -24,9 +24,10 @@ public class ClientDto {
     private String city;
     private String pinCode;
     private String purchaseType;
+    private String userName;
+    private String secretCode;
     private Date licenseStartDate;
     private Date licenseExpiredDate;
     private String licenseKey;
     private String domainName;
-    private Timestamp createDate;
 }
