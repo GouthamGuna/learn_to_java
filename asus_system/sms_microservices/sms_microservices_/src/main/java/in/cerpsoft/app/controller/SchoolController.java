@@ -33,4 +33,16 @@ public class SchoolController {
                                               @RequestBody SchoolDto schoolDto){
         return new ResponseEntity<>(schoolService.getSchoolById(id), HttpStatus.OK);
     }
+
+    @PutMapping("/schooldetails/update/{id}")
+    public ResponseEntity<SchoolDto> upDateSchoolDetails(@RequestBody SchoolDto schoolDto,
+                                                         @PathVariable("id") int id){
+        return new ResponseEntity<>(schoolService.upDateSchoolDetails(schoolDto, id), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/schooldetails/delete/{id}")
+    public ResponseEntity<String> deleteSchoolData(@PathVariable("id") int id){
+        schoolService.deleteSchoolDetails(id);
+        return new ResponseEntity<>("School Details Deleted Successfully...", HttpStatus.OK);
+    }
 }
