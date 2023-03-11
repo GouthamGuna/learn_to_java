@@ -11,4 +11,8 @@ public interface SchoolService {
      List<SchoolDto> schoolDetailsList();
 
      SchoolDto getSchoolById(int id);
+
+     SchoolDto upDateSchoolDetails(SchoolDto schoolDto, int id);
+
+     void deleteSchoolDetails(int id);
 }
