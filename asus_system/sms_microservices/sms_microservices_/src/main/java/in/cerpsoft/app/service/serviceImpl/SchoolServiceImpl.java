@@ -33,4 +33,38 @@ public class SchoolServiceImpl implements SchoolService {
         return schoolRepository.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException("School", "Id", id));
     }
+
+    @Override
+    public SchoolDto upDateSchoolDetails(SchoolDto schoolDto, int id) {
+
+        SchoolDto exitingSchool = schoolRepository.findById(id).orElseThrow(() ->
+                new ResourceNotFoundException("School", "Id", id));
+
+        exitingSchool.setAddress(schoolDto.getAddress());
+        exitingSchool.setSchoolName(schoolDto.getSchoolName());
+        exitingSchool.setSchoolAffiliationNo(schoolDto.getSchoolAffiliationNo());
+        exitingSchool.setMobileNo(schoolDto.getMobileNo());
+        exitingSchool.setLandLineNo(schoolDto.getLandLineNo());
+        exitingSchool.setCountry(schoolDto.getCountry());
+        exitingSchool.setState(schoolDto.getState());
+        exitingSchool.setCity(schoolDto.getCity());
+        exitingSchool.setPinCode(schoolDto.getPinCode());
+        exitingSchool.setSchoolLogo(schoolDto.getSchoolLogo());
+        exitingSchool.setContactPerson(schoolDto.getContactPerson());
+        exitingSchool.setWebsite(schoolDto.getWebsite());
+        schoolDto.setEmailId(schoolDto.getEmailId());
+        schoolDto.setPersonalEmailId(schoolDto.getPersonalEmailId());
+
+        schoolRepository.save(exitingSchool);
+
+        return exitingSchool;
+    }
+
+    @Override
+    public void deleteSchoolDetails(int id) {
+         schoolRepository.findById(id).orElseThrow(() ->
+                new ResourceNotFoundException("School", "Id", id));
+
+        schoolRepository.deleteById(id);
+    }
 }
