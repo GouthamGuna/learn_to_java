@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/school/api")
+@RequestMapping("/school")
 public class SchoolController {
     @Autowired
     private SchoolService schoolService;
@@ -20,29 +20,29 @@ public class SchoolController {
         this.schoolService = schoolService;
     }
     @PostMapping("/save")
-    public ResponseEntity<SchoolDto> saveSchool(@RequestBody @Valid SchoolDto schoolDto){
+    public ResponseEntity<SchoolDto> saveSchoolDetails(@RequestBody @Valid SchoolDto schoolDto){
         return new ResponseEntity<>(schoolService.saveSchoolDetails(schoolDto), HttpStatus.CREATED);
     }
 
     @GetMapping("/fetchAll")
-    public ResponseEntity<List<SchoolDto>> findByAll(SchoolDto schoolDto){
-        return ResponseEntity.ok(schoolService.schoolDetailsList());
+    public ResponseEntity<List<SchoolDto>> getAllSchoolList(SchoolDto schoolDto){
+        return ResponseEntity.ok(schoolService.getAllSchoolList());
     }
 
     @GetMapping("/findById/{id}")
-    public ResponseEntity<SchoolDto> findById(@PathVariable("id") int id,
+    public ResponseEntity<SchoolDto> getSchoolById(@PathVariable("id") int id,
                                               @RequestBody SchoolDto schoolDto){
         return new ResponseEntity<>(schoolService.getSchoolById(id), HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<SchoolDto> upDateSchoolDetails(@RequestBody SchoolDto schoolDto,
+    public ResponseEntity<SchoolDto> upDateSchoolDetails(@RequestBody @Valid SchoolDto schoolDto,
                                                          @PathVariable("id") int id){
         return new ResponseEntity<>(schoolService.upDateSchoolDetails(schoolDto, id), HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteSchoolData(@PathVariable("id") int id){
+    public ResponseEntity<String> deleteSchoolDetails(@PathVariable("id") int id){
         schoolService.deleteSchoolDetails(id);
         return new ResponseEntity<>("School Details Deleted Successfully...", HttpStatus.OK);
     }

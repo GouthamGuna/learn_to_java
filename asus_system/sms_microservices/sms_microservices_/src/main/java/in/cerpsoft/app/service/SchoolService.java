@@ -8,7 +8,7 @@ public interface SchoolService {
 
      SchoolDto saveSchoolDetails(SchoolDto schoolDto);
 
-     List<SchoolDto> schoolDetailsList();
+     List<SchoolDto> getAllSchoolList();
 
      SchoolDto getSchoolById(int id);
 

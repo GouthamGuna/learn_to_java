@@ -24,21 +24,19 @@ public class SchoolServiceImpl implements SchoolService {
     }
 
     @Override
-    public List< SchoolDto > schoolDetailsList() {
+    public List< SchoolDto > getAllSchoolList() {
         return schoolRepository.findAll();
     }
 
     @Override
     public SchoolDto getSchoolById(int id) {
-        return schoolRepository.findById(id).orElseThrow(() ->
-                new ResourceNotFoundException("School", "Id", id));
+        return schoolRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("School", "Id", id));
     }
 
     @Override
     public SchoolDto upDateSchoolDetails(SchoolDto schoolDto, int id) {
 
-        SchoolDto exitingSchool = schoolRepository.findById(id).orElseThrow(() ->
-                new ResourceNotFoundException("School", "Id", id));
+        SchoolDto exitingSchool = schoolRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("School", "Id", id));
 
         exitingSchool.setAddress(schoolDto.getAddress());
         exitingSchool.setSchoolName(schoolDto.getSchoolName());
@@ -62,9 +60,7 @@ public class SchoolServiceImpl implements SchoolService {
 
     @Override
     public void deleteSchoolDetails(int id) {
-         schoolRepository.findById(id).orElseThrow(() ->
-                new ResourceNotFoundException("School", "Id", id));
-
+         schoolRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("School", "Id", id));
         schoolRepository.deleteById(id);
     }
 }
