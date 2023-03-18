@@ -1,6 +1,7 @@
 package in.cerpsoft.app.service.serviceImpl;
 
 import in.cerpsoft.app.dto.BranchDto;
+import in.cerpsoft.app.exception.ResourceAlreadyExists;
 import in.cerpsoft.app.exception.ResourceNotFoundException;
 import in.cerpsoft.app.repository.BranchRepository;
 import in.cerpsoft.app.service.BranchService;
@@ -20,6 +21,8 @@ public class BranchServiceImpl implements BranchService {
 
     @Override
     public BranchDto saveBranchDetails(BranchDto branchDto) {
+
+        if(branchRepository.findByBranchName(branchDto.getBranchName()) !=null) throw new ResourceAlreadyExists("Branch", "BranchName", branchDto.getBranchName());
         return branchRepository.save(branchDto);
     }
 
