@@ -8,10 +8,16 @@ public class FP01_Exercises {
 
         List<Integer> newList = Arrays.asList(0,1,2,3,4,5,6,7,8,10);
         printOddNumbers(newList);
+        printSquaresOfEvenNumbers(newList);
 
         List<String>  courses = List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "Docker");
         printCourses(courses);
         printFourLetters(courses);
+    }
+
+    private static void printSquaresOfEvenNumbers(List<Integer> newList) {
+        newList.stream()
+                .forEach(out::println);
     }
 
     private static void printFourLetters(List< String> courses) {
