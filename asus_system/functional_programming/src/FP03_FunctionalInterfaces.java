@@ -1,2 +1,2 @@
-package PACKAGE_NAME;public class FP03_FunctionalInterfaces {
+public class FP03_FunctionalInterfaces {
 }
