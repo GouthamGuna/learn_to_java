@@ -6,7 +6,8 @@ class ExampleProgrammingTest {
     @Test
     void Test(){
         ExampleProgramming programming = new ExampleProgramming();
-        programming.studentGrade();
+        //programming.studentGrade();
+        programming.studentSubjectMapping();
     }
 
 }

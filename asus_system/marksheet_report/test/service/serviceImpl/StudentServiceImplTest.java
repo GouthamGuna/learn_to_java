@@ -9,5 +9,6 @@ class StudentServiceImplTest {
 
         StudentServiceImpl obj = new StudentServiceImpl();
         obj.createStudentList();
+        obj.subjectMappingStudent();
     }
 }
