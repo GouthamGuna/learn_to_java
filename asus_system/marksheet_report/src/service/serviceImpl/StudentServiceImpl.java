@@ -1,10 +1,14 @@
 package service.serviceImpl;
 
 import entity.StudentEntity;
+import entity.SubjectEntity;
 import service.StudentService;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static helper.StudentHelper.*;
 import static java.lang.System.out;
@@ -16,6 +20,8 @@ public class StudentServiceImpl implements StudentService {
     private static final int lengthOfClassName = 1;
     private static final int lengthOfSpecName = 1;
     private static final int lengthOfSectionName = 1;
+
+    private static final SubjectServiceImpl service = new SubjectServiceImpl();
 
     @Override
     public List<StudentEntity> createStudentList() {
@@ -35,4 +41,15 @@ public class StudentServiceImpl implements StudentService {
                     out.println("Student Id : "+str.getId()+" : student name : "+str.getStudentName()+" : student Class : "+str.getClassName()+" : student Spec : "+str.getSpecName()+" : student Section : "+str.getSectionName());
         }
     }
+
+    public void subjectMappingStudent(){
+
+        Map< List < SubjectEntity >, List< StudentEntity> > studentSubject = new HashMap<>();
+        studentSubject.put(service.getSubjectDetails(), createStudentList());
+
+        for(List<SubjectEntity> student: studentSubject.keySet()){
+            out.println(student + " : "+studentSubject.get(student));
+        }
+    }
+
 }

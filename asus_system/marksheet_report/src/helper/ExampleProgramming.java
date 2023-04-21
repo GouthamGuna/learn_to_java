@@ -1,11 +1,6 @@
 package helper;
 
-import entity.SubjectEntity;
-import service.serviceImpl.SubjectServiceImpl;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class ExampleProgramming {
 
@@ -38,5 +33,43 @@ public class ExampleProgramming {
 
             System.out.println("Student "+(i + 1)+" mark : "+mark +" Grade : "+grade);
         }
+    }
+
+    public void studentSubjectMapping(){
+
+        Map<String, List<String> > studentSubjects = new HashMap<>();
+
+        List<String> subjects1 = new ArrayList<>();
+        subjects1.add("Math");
+        subjects1.add("Science");
+        subjects1.add("English");
+        subjects1.add("Social Studies");
+        subjects1.add("History");
+        studentSubjects.put("Student 1", subjects1);
+
+        List<String> subjects2 = new ArrayList<>();
+        subjects2.add("Math");
+        subjects2.add("Science");
+        subjects2.add("Geography");
+        subjects2.add("History");
+        subjects2.add("Spanish");
+        studentSubjects.put("Student 2", subjects2);
+
+        List<String> subjects3 = new ArrayList<>();
+        subjects3.add("Math");
+        subjects3.add("Science");
+        subjects3.add("English");
+        subjects3.add("Art");
+        subjects3.add("Music");
+        studentSubjects.put("Student 3", subjects3);
+
+        /**
+         *
+         *  for(String student: studentSubjects.keySet()){
+         *             System.out.println(student + ": " + studentSubjects.get(student));
+         *         }
+         */
+
+       studentSubjects.keySet().stream().map(student -> student + ": " + studentSubjects.get(student)).forEach(System.out::println);
     }
 }
