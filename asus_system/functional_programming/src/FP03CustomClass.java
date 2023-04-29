@@ -1,5 +1,7 @@
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 class Course{
     private String name;
@@ -80,5 +82,16 @@ public class FP03CustomClass {
 
         System.out.println(
                 listOfCourses.stream().noneMatch(coursePredicateGreaterThen90));
+
+        // sort the course
+        Comparator<Course> comparingByNoOfStudent = Comparator.comparing(Course::getNoOfStudent);
+
+        Comparator<Course> comparingByNoOfStudentDec = Comparator.comparing(Course::getNoOfStudent).reversed();
+
+        System.out.println("comparingByNoOfStudent " +
+        listOfCourses.stream().sorted(comparingByNoOfStudent).toList());
+
+        System.out.println("comparingByNoOfStudentDecreasing " +
+                listOfCourses.stream().sorted(comparingByNoOfStudentDec).toList());
     }
 }
