@@ -1,13 +1,12 @@
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 class Course{
-    private String name;
-    private String Category;
-    private int reviewScore;
-    private int noOfStudent;
+    private final String name;
+    private final String Category;
+    private final int reviewScore;
+    private final int noOfStudent;
 
     public Course(String name, String category, int reviewScore, int noOfStudent) {
         this.name = name;
@@ -16,36 +15,16 @@ class Course{
         this.noOfStudent = noOfStudent;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getCategory() {
         return Category;
-    }
-
-    public void setCategory(String category) {
-        Category = category;
     }
 
     public int getReviewScore() {
         return reviewScore;
     }
 
-    public void setReviewScore(int reviewScore) {
-        this.reviewScore = reviewScore;
-    }
-
     public int getNoOfStudent() {
         return noOfStudent;
-    }
-
-    public void setNoOfStudent(int noOfStudent) {
-        this.noOfStudent = noOfStudent;
     }
 
     @Override
@@ -86,12 +65,33 @@ public class FP03CustomClass {
         // sort the course
         Comparator<Course> comparingByNoOfStudent = Comparator.comparing(Course::getNoOfStudent);
 
-        Comparator<Course> comparingByNoOfStudentDec = Comparator.comparing(Course::getNoOfStudent).reversed();
+        Comparator<Course> comparingByNoOfStudentDec = Comparator.comparingInt(Course::getNoOfStudent).reversed();
 
-        System.out.println("comparingByNoOfStudent " +
+        System.out.println("comparingByNoOfStudent : " +
         listOfCourses.stream().sorted(comparingByNoOfStudent).toList());
 
-        System.out.println("comparingByNoOfStudentDecreasing " +
+        System.out.println("comparingByNoOfStudentDecreasing : " +
                 listOfCourses.stream().sorted(comparingByNoOfStudentDec).toList());
+
+        Comparator<Course> comparingByNoOfStudentsNoOfReview = Comparator.comparingInt(Course::getReviewScore);
+
+        System.out.println("comparingByNoOfStudentsNoOfReview : "+
+                listOfCourses.stream().sorted(comparingByNoOfStudentsNoOfReview).toList());
+
+        //skip, limit
+
+        System.out.println("comparingByNoOfStudentsNoOfReview using limit : "+
+                listOfCourses.stream().sorted(comparingByNoOfStudentsNoOfReview).limit(3).toList());
+
+        System.out.println("comparingByNoOfStudentsNoOfReview using skip : "+
+                listOfCourses.stream().sorted(comparingByNoOfStudentsNoOfReview).skip(3).toList());
+
+        System.out.println("filter : "+
+        listOfCourses.stream()
+                .filter(getMicroservice()).toList());
+    }
+
+    private static Predicate<Course> getMicroservice() {
+        return course -> course.getCategory().equals("Microservice");
     }
 }
