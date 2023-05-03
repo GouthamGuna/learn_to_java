@@ -1,15 +1,28 @@
 package in.gmsk.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import lombok.Data;
 
 @Entity
-public record UserEntity(
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        int id,
-        String userName,
-        String secret
-) { }
+@Data
+@Table(name = "users")
+public class UserEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @NotNull
+    @NotBlank
+    @NotEmpty(message = "please provide the mailId.")
+    private String userMailId;
+    @NotNull
+    @NotBlank
+    @Size(min = 2, max = 30)
+    @NotEmpty(message = "please provide the user name.")
+    private String userName;
+    @NotNull
+    @NotBlank
+    @Min(8)
+    @NotEmpty(message = "please provide the password.")
+    private String secret;
+}
