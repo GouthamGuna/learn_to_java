@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GMSK</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="success" class="success">Register success</div>
+      <form id="registerForm">
+        <label for="mailId"
+          >Mail Id
+          <input type="text" name="mailId" id="mailId" placeholder="mailId" />
+        </label>
+        <label for="username"
+          >User Name
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="username"
+          />
+        </label>
+        <label for="password"
+          >Password
+          <input
+            type="password"
+            id="password"
+            name="username"
+            placeholder="password"
+          />
+        </label>
+
+        <button type="submit" id="registerRequest">Register</button>
+      </form>
+      <div class="error">
+        <div id="statusCode"></div>
+        <div id="message"></div>
+      </div>
+    </div>
+
+    <script src="../js/register.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+.container{
+    padding: auto;
+    position: absolute;
+    margin: auto;
+    font-family: sans-serif;
+}
+
+.error{
+    color: red;
+}
+
+.success{
+    color: green;
+}

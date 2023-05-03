@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GMSK</title>
+    <link rel="stylesheet" href="../css/welcome.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav>
+      <span class="logo greeting"></span>
+      <ul class="menu">
+        <li class="menu__item" value="welcome">Home</li>
+        <li class="menu__item" value="addStudent">Add Student</li>
+        <li class="menu__item" value="" id="logoutRequest">Logout</li>
+      </ul>
+    </nav>
+    <main>
+      <section id="container">
+        <h1 id="error"></h1>
+        <h1>All Student List</h1>
+        <div>
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th>#</th>
+                <th>Student name</th>
+                <th>Roll No</th>
+                <th>Class</th>
+                <th>Action</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>&copy; 2023 GMSK</footer>
+
+    <script src="../js/welcome.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script type="text/javascript">
+      window.history.forward();
+      function noBack() {
+        window.history.forward();
+      }
+    </script>
+  </body>
+</html>
