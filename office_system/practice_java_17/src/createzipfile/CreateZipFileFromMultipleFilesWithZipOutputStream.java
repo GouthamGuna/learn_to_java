@@ -15,7 +15,7 @@ public class CreateZipFileFromMultipleFilesWithZipOutputStream {
         String[] srcFiles = {"C:/Users/USER/Desktop/mobileapp/academicyear.php",
                 "C:/Users/USER/Desktop/mobileapp/attendance.php", "C:/Users/USER/Desktop/mobileapp/childhistory.php",
                 "C:/Users/USER/Desktop/mobileapp/classid.php"};
-
+""
         try {
 
             // create byte buffer
