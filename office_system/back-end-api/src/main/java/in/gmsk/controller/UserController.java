@@ -1,5 +1,6 @@
 package in.gmsk.controller;
 
+import in.gmsk.entity.StudentEntity;
 import in.gmsk.entity.UserEntity;
 import in.gmsk.service.serviceImpl.UserServiceImpl;
 import jakarta.validation.Valid;
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/")
@@ -36,5 +39,9 @@ public class UserController {
         }else{
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+    }
+    @GetMapping("/studentList")
+    public ResponseEntity< List<StudentEntity> > getAllStudentList(){
+        return new ResponseEntity<>(userService.allStudentList(), HttpStatus.OK);
     }
 }
