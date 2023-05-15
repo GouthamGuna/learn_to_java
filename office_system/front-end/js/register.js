@@ -7,7 +7,7 @@ $(document).ready(function () {
 });
 
 function registerUser() {
-  const urlString = "http://localhost:8080/register";
+  const urlString = "http://192.168.0.104:8080/register";
 
   let entity = {
     userMailId: $("#mailId").val(),

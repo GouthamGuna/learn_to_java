@@ -2,8 +2,6 @@ window.onload = function()
 {
     const path = window.location.pathname.split("/");
 
-    alert("path : "+path)
-
     switch(path[2])
     {
         case "welcome":
@@ -30,10 +28,9 @@ window.onload = function()
            
             const path = item.getAttribute("value");
             loadPage(path);
-            alert("33 : "+path)
+            
             if(path == "welcome")
             {
-                alert("37 : "+path )
                 window.history.pushState("", "", "/");
 
                 return;
@@ -46,13 +43,11 @@ window.onload = function()
     function loadPage($path)
     {
         if($path == "") return;
-        alert("50 : "+path)
         const container = document.getElementById("container");
-        alert("51 : "+container)
-        console.log(container)
+
         const request = new XMLHttpRequest();
         request.open("GET", + $path + ".html");
-        alert("54 : "+request.open("GET", + $path + ".html"))
+       
         request.send();
         request.onload = function()
         {
