@@ -44,4 +44,9 @@ public class UserController {
     public ResponseEntity< List<StudentEntity> > getAllStudentList(){
         return new ResponseEntity<>(userService.allStudentList(), HttpStatus.OK);
     }
+    @PutMapping("/student/{id}")
+    public ResponseEntity<StudentEntity> UpdateDateStudentDetails(@PathVariable("id") int studentId,
+            @RequestBody StudentEntity studentEntity){
+        return new ResponseEntity<>(userService.editStudentDetails(studentId, studentEntity), HttpStatus.OK);
+    }
 }

@@ -12,4 +12,6 @@ public interface UserService {
     String findByUser(String userName);
 
     List<StudentEntity> allStudentList();
+
+    StudentEntity editStudentDetails(int id, StudentEntity studentEntity);
 }

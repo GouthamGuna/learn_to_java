@@ -2,6 +2,7 @@ package in.gmsk.service.serviceImpl;
 
 import in.gmsk.entity.StudentEntity;
 import in.gmsk.entity.UserEntity;
+import in.gmsk.exception.ResourceNotFound;
 import in.gmsk.repository.StudentRepository;
 import in.gmsk.repository.UserRepository;
 import in.gmsk.service.UserService;
@@ -42,5 +43,21 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<StudentEntity> allStudentList() {
         return studentRepository.findAll();
+    }
+
+    @Override
+    public StudentEntity editStudentDetails(int id, StudentEntity studentEntity) {
+
+        StudentEntity exitingStudent = studentRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound("Edit student details ", "Student", id));
+
+
+        exitingStudent.setStudentName(studentEntity.getStudentName());
+        exitingStudent.setClassName(studentEntity.getClassName());
+        exitingStudent.setRollNo(studentEntity.getRollNo());
+
+        studentRepository.save(exitingStudent);
+
+        return exitingStudent;
     }
 }
