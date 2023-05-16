@@ -49,4 +49,10 @@ public class UserController {
             @RequestBody StudentEntity studentEntity){
         return new ResponseEntity<>(userService.editStudentDetails(studentId, studentEntity), HttpStatus.OK);
     }
+
+    @DeleteMapping("student/delete/{id}")
+    public ResponseEntity<String> deleteStudentDetails(@PathVariable int id){
+        userService.deleteStudentDetails(id);
+        return new ResponseEntity<>("Student details deleted successfully...", HttpStatus.OK);
+    }
 }

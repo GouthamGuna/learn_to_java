@@ -14,4 +14,6 @@ public interface UserService {
     List<StudentEntity> allStudentList();
 
     StudentEntity editStudentDetails(int id, StudentEntity studentEntity);
+
+    void deleteStudentDetails(int id);
 }

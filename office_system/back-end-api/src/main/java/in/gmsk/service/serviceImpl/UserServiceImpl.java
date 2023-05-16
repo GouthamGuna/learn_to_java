@@ -60,4 +60,13 @@ public class UserServiceImpl implements UserService {
 
         return exitingStudent;
     }
+
+    @Override
+    public void deleteStudentDetails(int id) {
+        studentRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound("Student", "Id", id));
+        studentRepository.deleteById(id);
+    }
+
+
 }
