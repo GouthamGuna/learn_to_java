@@ -7,7 +7,7 @@ $(document).ready(function () {
 });
 
 function registerUser() {
-  const urlString = "http://192.168.0.104:8080/register";
+  const urlString = "http://192.168.0.104:8080/api/register";
 
   let entity = {
     userMailId: $("#mailId").val(),
@@ -31,7 +31,7 @@ function registerUser() {
         "<span> Status Code : </span>" + " " + responseJSON.status
       );
       $("#message").html(
-        "<span> Error Message : </span>" + " " + responseJSON.responseText
+        "<span> Error Message : </span>" + " " + responseJSON.responseJSON.error
       );
     },
   });
