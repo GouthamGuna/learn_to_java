@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    image: ggowthamsankar/master_service:latest
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/master_service?autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    environment:
+      DATABASE_HOST: localhost
+      DATABASE_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: master_service
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: root
