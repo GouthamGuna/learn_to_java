@@ -9,7 +9,7 @@ public class InternetConnectivityCheck{
         try {
             Inet4Address address = (Inet4Address) Inet4Address.getByName("www.google.com");
 
-            boolean reachable = address.isReachable(3000);
+            boolean reachable = address.isReachable(2000);
 
             if (reachable) {
                 System.out.println("Internet is connected");
