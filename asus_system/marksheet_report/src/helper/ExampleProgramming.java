@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ExampleProgramming {
 
-    public void studentGrade(){
+    public static void studentGrade(){
 
         int[] marks = {10,19,21,29,31,30,39,40,41,49,51,50,61,65,69,70,71,75,79,80,81,85,89,90,91,95,99};
         String grade = null;
@@ -35,7 +35,7 @@ public class ExampleProgramming {
         }
     }
 
-    public void studentSubjectMapping(){
+    public static void studentSubjectMapping(){
 
         Map<String, List<String> > studentSubjects = new HashMap<>();
 
@@ -71,5 +71,9 @@ public class ExampleProgramming {
          */
 
        studentSubjects.keySet().stream().map(student -> student + ": " + studentSubjects.get(student)).forEach(System.out::println);
+    }
+
+    public static void main(String[] args) {
+        ExampleProgramming.studentSubjectMapping();
     }
 }
