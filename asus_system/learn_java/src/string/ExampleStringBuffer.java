@@ -4,10 +4,10 @@ public class ExampleStringBuffer {
 
     public static void main(String[] args) {
 
-        String subjectName = "Hello";
+        String subjectName = "English";
 
         StringBuilder stringBuilder =new StringBuilder();
-        stringBuilder.append("Hai" + ", ").append(subjectName);
+        stringBuilder.append("Nil" + ", ").append(subjectName);
 
         System.out.println("stringBuilder() : "+stringBuilder);
 
