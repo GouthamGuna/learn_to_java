@@ -1,5 +1,6 @@
 package in.gmsk.array;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -16,13 +17,16 @@ class Java8ArrayProblemsTest {
 		//int[] arr2 = {4,5,8,9,7,1};
 
 		Java8ArrayProblems instance = new Java8ArrayProblems();
-		int secSmallNo = instance.fetchSecondSmallNumber(arr);
+		//int secSmallNo = instance.fetchSecondSmallNumber(arr);
 
-		System.out.println("output : "+secSmallNo);
+		//System.out.println("output : "+secSmallNo);
 
 		//output = instance.fetchingSameElementInArrays(arr1, arr2);
 
 		//System.out.println("output : "+output);
+		
+		instance.monthNames();
+		
 	}
 
 }
