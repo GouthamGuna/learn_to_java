@@ -2,6 +2,7 @@ package in.gmsk.date;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 
@@ -49,10 +50,21 @@ public class FindMonthOfDays {
 
 		return days;
 	}
+	
+	public static void getStartDateAndEndDate() {
+		
+		YearMonth yearMonth = YearMonth.of(2023, 7); // e.g. YearMonth.of(2023, 7) for July 2023
 
+
+		LocalDate firstDay = yearMonth.atDay(1); // e.g. 2023-07-01
+		LocalDate lastDay = yearMonth.atEndOfMonth(); // e.g. 2023-07-31
+		
+		System.out.println("firstDay : "+firstDay);
+		System.out.println("lastDay : "+lastDay);
+	}
 
 	public static void main(String[] args) {
-		getNumberOfDays();
+		getStartDateAndEndDate();
 	}
 
 }
