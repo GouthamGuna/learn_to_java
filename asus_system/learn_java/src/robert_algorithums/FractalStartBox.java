@@ -1,7 +1,7 @@
 package robert_algorithums;
 
 public class FractalStartBox {
-    public static void main(String[] args) {
+    public static void main(String[] gmsk) {
         star(0,0,1);
     }
 
