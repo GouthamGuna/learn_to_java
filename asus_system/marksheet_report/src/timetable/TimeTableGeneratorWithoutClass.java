@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TimeTableGenerator {
+public class TimeTableGeneratorWithoutClass {
     private int numDays;
     private int numPeriods;
     private List<String> teachers;
     private List<String> subjects;
     private Map<String, List<String>> teacherSubjects;
 
-    public TimeTableGenerator(int numDays, int numPeriods, List<String> teachers, List<String> subjects, Map<String, List<String>> teacherSubjects) {
+    public TimeTableGeneratorWithoutClass(int numDays, int numPeriods, List<String> teachers, List<String> subjects, Map<String, List<String>> teacherSubjects) {
         this.numDays = numDays;
         this.numPeriods = numPeriods;
         this.teachers = teachers;
@@ -37,7 +37,7 @@ public class TimeTableGenerator {
                 subjectCount.put(subject, subjectCount.get(subject) + 1);
             }
         }
-        
+
         return timeTable;
     }
 
@@ -81,7 +81,7 @@ public class TimeTableGenerator {
         teacherSubjects.put("Mrs. Williams", new ArrayList<>());
         teacherSubjects.get("Mrs. Williams").add("English");
 
-        TimeTableGenerator generator = new TimeTableGenerator(numDays, numPeriods, teachers, subjects, teacherSubjects);
+        TimeTableGeneratorWithoutClass generator = new TimeTableGeneratorWithoutClass(numDays, numPeriods, teachers, subjects, teacherSubjects);
         String[][][] timeTable = generator.generate();
         for (int day = 0; day < numDays; day++) {
             System.out.println("Day " + (day + 1));
