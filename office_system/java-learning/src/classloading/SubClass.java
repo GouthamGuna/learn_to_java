@@ -1,4 +1,4 @@
-package java_learning;
+package classloading;
 
 public class SubClass extends SuperClass{
 
