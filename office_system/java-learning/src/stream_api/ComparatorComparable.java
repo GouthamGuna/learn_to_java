@@ -71,8 +71,7 @@ public class ComparatorComparable {
         };
 
         Comparator<Student> compStudentLambdaFunction =
-                (o1,  o2) -> o1.studentRollNo > o2.studentRollNo ? 1 : -1;
-
+                (o1, o2) -> o1.studentRollNo > o2.studentRollNo ? 1 : -1;
 
         List<Student> students = new ArrayList<>();
         students.add(new Student("Hari", 10));
