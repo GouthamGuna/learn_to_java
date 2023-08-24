@@ -43,4 +43,8 @@ public class Shop {
         }).start();
         return futurePrice;
     }
+
+    public String getName() {
+        return name;
+    }
 }
