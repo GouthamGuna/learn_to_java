@@ -9,7 +9,7 @@ public class PickNameAtRandom {
     public static String getRandomName(List<String> listOfString) {
         String randomString = null;
 
-        if (0 != listOfString.size()) {
+        if (!listOfString.isEmpty()) {
             var rand = new Random();
             int index = rand.nextInt(listOfString.size());
             randomString = listOfString.get(index);
