@@ -6,7 +6,9 @@ public class JustThinkingProgramming {
 
     }
 
-    public static void someWork(){
+    public synchronized void someWork() {
 
+        int i = 20;
+        System.out.println(i);
     }
 }
