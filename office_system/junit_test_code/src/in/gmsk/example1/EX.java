@@ -1,5 +1,7 @@
 package in.gmsk.example1;
 
+import static dev.gmsk.util.RandomTokenGenerator.*;
+
 public class EX {
 	
 	/*public static void m1() { // =
@@ -23,5 +25,8 @@ public class EX {
 		
 		char no = 67;
 		System.out.println(no);
+		
+		System.out.println(tokenGenerator());
+		System.out.println(tokenGenerator(10));
 	}
 }
