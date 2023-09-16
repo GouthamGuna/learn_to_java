@@ -112,4 +112,6 @@ public class TimeTableGenerator {
             System.out.println();
         }
     }
+
+    // chk
 }
