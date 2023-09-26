@@ -16,6 +16,16 @@ class ImageUploaderTest {
     }
 
     @Test
+    void uploadImageLongBlobTest() {
+        String imagePath, output;
+
+        imagePath = "C:\\Users\\User\\Downloads\\Suresh Photo.jpeg";
+        output = uploader.uploadImage(imagePath);
+
+        System.out.println("output = " + output);
+    }
+
+    @Test
     void downloadImageTest() {
         String downloadPath, output;
 
