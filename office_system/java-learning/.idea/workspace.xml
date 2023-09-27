@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9882986b-945b-4449-a2d7-31d4e90c8c08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/httpclient/HttpClientBasicAuthentication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/async/BestPriceFinder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/async/Shop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/async/ShopMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/async/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/classloading/ConstClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/classloading/NoInitialization.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/classloading/SubClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/classloading/SuperClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/memory/DirectMemoryOOM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/memory/HeapSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/stream_api/ComparatorComparable$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/stream_api/ComparatorComparable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/stream_api/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/test/FolderCreation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-learning/test/JustThinkingProgramming.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,7 +31,20 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/httpclient/HttpClientBasicAuthentication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -54,6 +83,7 @@
         <option value="$PROJECT_DIR$/src/test/LikeProgramming.java" />
         <option value="$PROJECT_DIR$/src/test/FolderCreation.java" />
         <option value="$PROJECT_DIR$/src/test/JustThinkingProgramming.java" />
+        <option value="$PROJECT_DIR$/src/httpclient/HttpClientBasicAuthentication.java" />
       </list>
     </option>
   </component>
@@ -84,6 +114,21 @@
               <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="java-learning" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-learning" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-learning" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="httpclient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -93,7 +138,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -210,8 +255,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23776758" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24235474" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -456,6 +502,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/httpclient/HttpClientBasicAuthentication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
@@ -484,6 +540,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>json-simple-1.1.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
