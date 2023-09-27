@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9882986b-945b-4449-a2d7-31d4e90c8c08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/httpclient/HttpClientBasicAuthentication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/PasswordUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test/PasswordUtilTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/async/BestPriceFinder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/async/Shop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/async/ShopMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/async/Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/classloading/ConstClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/classloading/NoInitialization.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/classloading/SubClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/classloading/SuperClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/memory/DirectMemoryOOM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/memory/HeapSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/stream_api/ComparatorComparable$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/stream_api/ComparatorComparable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/stream_api/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/test/FolderCreation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-learning/test/JustThinkingProgramming.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-learning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-learning.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,14 +19,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/httpclient/HttpClientBasicAuthentication.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/FolderCreation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+            <state relative-caret-position="575">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/PasswordUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/test/PasswordUtilTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="55">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -50,6 +58,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -84,6 +93,8 @@
         <option value="$PROJECT_DIR$/src/test/FolderCreation.java" />
         <option value="$PROJECT_DIR$/src/test/JustThinkingProgramming.java" />
         <option value="$PROJECT_DIR$/src/httpclient/HttpClientBasicAuthentication.java" />
+        <option value="$PROJECT_DIR$/src/test/PasswordUtil.java" />
+        <option value="$PROJECT_DIR$/test/test/PasswordUtilTest.java" />
       </list>
     </option>
   </component>
@@ -116,17 +127,6 @@
             </path>
             <path>
               <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-learning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-learning" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="httpclient" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -137,11 +137,27 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../common_jars/junit-jupiter-api-5.8.2.jar!/" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="test" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -155,26 +171,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.JustThinkingProgramming">
+  <component name="RunManager" selected="JUnit.PasswordUtilTest">
     <configuration name="FolderCreation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.FolderCreation" />
       <module name="java-learning" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HeapSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="memory.HeapSort" />
-      <module name="java-learning" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="memory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -208,26 +211,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShopMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="async.ShopMain" />
+    <configuration name="PasswordUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-learning" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="async.*" />
+          <option name="PATTERN" value="test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.PasswordUtilTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PasswordUtilTest.encodePasswordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-learning" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.PasswordUtilTest" />
+      <option name="METHOD_NAME" value="encodePasswordTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PasswordUtilTest" />
+        <item itemvalue="JUnit.PasswordUtilTest.encodePasswordTest" />
         <item itemvalue="Application.JustThinkingProgramming" />
         <item itemvalue="Application.FolderCreation" />
         <item itemvalue="Application.LikeProgramming" />
-        <item itemvalue="Application.HeapSort" />
-        <item itemvalue="Application.ShopMain" />
       </list>
     </recent_temporary>
   </component>
@@ -244,6 +265,20 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="PasswordUtilTest_encodePasswordTest - 2023.09.27 at 16h 48m 11s.xml">
+      <configuration name="PasswordUtilTest.encodePasswordTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PasswordUtilTest_encodePasswordTest - 2023.09.27 at 16h 48m 45s.xml">
+      <configuration name="PasswordUtilTest.encodePasswordTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PasswordUtilTest - 2023.09.27 at 16h 49m 13s.xml">
+      <configuration name="PasswordUtilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PasswordUtilTest - 2023.09.27 at 16h 53m 50s.xml">
+      <configuration name="PasswordUtilTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -257,7 +292,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24235474" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24235474" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -271,7 +306,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32991454" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.64444447" />
+      <window_info anchor="bottom" x="0" y="23" width="1366" height="705" id="Terminal" order="7" type="WINDOWED" visible="true" weight="0.64444447" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32991454" />
@@ -464,16 +499,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/LikeProgramming.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/FolderCreation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/memory/HeapSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -506,6 +531,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
           <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/FolderCreation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test/PasswordUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/PasswordUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
