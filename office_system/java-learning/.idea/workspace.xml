@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9882986b-945b-4449-a2d7-31d4e90c8c08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/PasswordUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test/PasswordUtilTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/memory/DemoOutOfMemory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/memory/DemoOutOfMemoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-learning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-learning.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/java-learning/test/PasswordUtilTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/java-learning/test/PasswordUtilTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,35 +19,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/FolderCreation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/PasswordUtil.java">
+        <entry file="file://$PROJECT_DIR$/src/memory/DemoOutOfMemory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="150">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test/PasswordUtilTest.java">
+        <entry file="file://$PROJECT_DIR$/test/memory/DemoOutOfMemoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="200">
+              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+              <folding>
+                <element signature="e#127#128#0" expanded="true" />
+                <element signature="e#157#158#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,6 +84,8 @@
         <option value="$PROJECT_DIR$/src/httpclient/HttpClientBasicAuthentication.java" />
         <option value="$PROJECT_DIR$/src/test/PasswordUtil.java" />
         <option value="$PROJECT_DIR$/test/test/PasswordUtilTest.java" />
+        <option value="$PROJECT_DIR$/test/memory/DemoOutOfMemoryTest.java" />
+        <option value="$PROJECT_DIR$/src/memory/DemoOutOfMemory.java" />
       </list>
     </option>
   </component>
@@ -127,6 +118,17 @@
             </path>
             <path>
               <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-learning" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-learning" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="memory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -153,6 +155,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="memory" />
       <recent name="test" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -171,7 +174,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PasswordUtilTest">
+  <component name="RunManager" selected="JUnit.DemoOutOfMemoryTest">
     <configuration name="FolderCreation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.FolderCreation" />
       <module name="java-learning" />
@@ -198,15 +201,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LikeProgramming" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.LikeProgramming" />
+    <configuration name="DemoOutOfMemoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-learning" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="memory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="memory" />
+      <option name="MAIN_CLASS_NAME" value="memory.DemoOutOfMemoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -244,11 +249,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DemoOutOfMemoryTest" />
         <item itemvalue="JUnit.PasswordUtilTest" />
         <item itemvalue="JUnit.PasswordUtilTest.encodePasswordTest" />
         <item itemvalue="Application.JustThinkingProgramming" />
         <item itemvalue="Application.FolderCreation" />
-        <item itemvalue="Application.LikeProgramming" />
       </list>
     </recent_temporary>
   </component>
@@ -278,6 +283,9 @@
     <history-entry file="PasswordUtilTest - 2023.09.27 at 16h 53m 50s.xml">
       <configuration name="PasswordUtilTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DemoOutOfMemoryTest - 2023.09.27 at 17h 26m 50s.xml">
+      <configuration name="DemoOutOfMemoryTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -306,7 +314,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32991454" />
-      <window_info anchor="bottom" x="0" y="23" width="1366" height="705" id="Terminal" order="7" type="WINDOWED" visible="true" weight="0.64444447" />
+      <window_info anchor="bottom" x="29" y="175" width="1308" height="377" id="Terminal" maximized="true" order="7" type="WINDOWED" weight="0.64444447" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32991454" />
@@ -556,11 +564,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/PasswordUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        <state relative-caret-position="200">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/memory/DemoOutOfMemoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding>
+            <element signature="e#127#128#0" expanded="true" />
+            <element signature="e#157#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/memory/DemoOutOfMemory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
         </state>
       </provider>
     </entry>
