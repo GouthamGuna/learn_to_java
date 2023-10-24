@@ -1,8 +1,9 @@
-package in.dev.gmsk.keywords;
+package in.dev.gmsk.keywords.transient_kw;
 
-import java.io.Serializable;
+import java.io.*;
 
-public class UserLoginAccess implements Serializable {
+
+class UserLoginAccess implements Serializable {
 
     String username;
     transient String password; //Now it will not be serialized
