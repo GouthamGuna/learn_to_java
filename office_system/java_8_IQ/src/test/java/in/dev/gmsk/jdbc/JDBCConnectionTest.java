@@ -6,9 +6,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class JDBCConnectionTest {
+
+    private static final String url = "jdbc:mysql://localhost:3306/pearl";
+    private static final String user = "root";
+    private static final String password = "root";
+    private static final JDBCConnection jdbcConnection;
+
+    static{
+        jdbcConnection = new JDBCConnection(url, user, password);
+    }
 
     @Test
     void getDataBaseConnectionTest() {
@@ -20,7 +27,7 @@ class JDBCConnectionTest {
         try {
 
             String query = "SELECT CONCAT(`firstname`,' ',`lastname`) AS studentName FROM `student_registration`\n";
-            conn = JDBCConnection.getDataBaseConnection();
+            conn = JDBCConnection.getDataBaseConnection(jdbcConnection);
             stmt = conn.prepareStatement(query);
             rs = stmt.executeQuery();
 
