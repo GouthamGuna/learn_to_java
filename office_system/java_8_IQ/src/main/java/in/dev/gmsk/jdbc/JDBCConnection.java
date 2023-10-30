@@ -4,13 +4,25 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ *    private static final String url = "jdbc:mysql://localhost:3306/pearl";
+ *    private static final String user = "root";
+ *    private static final String password = "root";
+ */
+
 public class JDBCConnection {
 
-    private static final String url = "jdbc:mysql://localhost:3306/pearl";
-    private static final String user = "root";
-    private static final String password = "root";
+    private final String url;
+    private final String user;
+    private final String password;
 
-    public static Connection getDataBaseConnection() throws SQLException {
-        return DriverManager.getConnection(url, user, password);
+    public JDBCConnection(String url, String userName, String password) {
+        this.url = url;
+        this.user = userName;
+        this.password = password;
+    }
+
+    public static Connection getDataBaseConnection(JDBCConnection jdbcConnection) throws SQLException {
+        return DriverManager.getConnection(jdbcConnection.url, jdbcConnection.user, jdbcConnection.password);
     }
 }
