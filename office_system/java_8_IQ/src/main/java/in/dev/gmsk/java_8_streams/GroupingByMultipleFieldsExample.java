@@ -2,6 +2,8 @@ package in.dev.gmsk.java_8_streams;
 
 import in.dev.gmsk.jdbc.JDBCConnection;
 import in.dev.gmsk.model.Employee;
+import in.dev.gmsk.model.EmployeeGroupByModel;
+import in.dev.gmsk.model.GroupByModel;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -158,5 +160,26 @@ class GroupingByMultipleFieldsExample {
         }
 
         return stringMapMap;
+    }
+
+    static Map<GroupByModel, Long> avoidCollectorsChaining(JDBCConnection jdbcConnection){
+
+        Connection connection = null;
+        Map<GroupByModel, Long> returnValue;
+
+        try{
+            connection = JDBCConnection.getDataBaseConnection(jdbcConnection);
+
+            List<Employee> employees = fetchEmployeeDetails(connection);
+
+           /* Map<GroupByModel, Long> multipleFieldsMap = employees.stream()
+                    .collect(Collectors.groupingBy(EmployeeGroupByModel::getGroupBy,
+                            Collectors.counting()));*/
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }
