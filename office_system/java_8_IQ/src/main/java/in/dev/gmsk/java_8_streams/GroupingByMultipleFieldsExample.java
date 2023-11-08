@@ -2,7 +2,6 @@ package in.dev.gmsk.java_8_streams;
 
 import in.dev.gmsk.jdbc.JDBCConnection;
 import in.dev.gmsk.model.Employee;
-import in.dev.gmsk.model.EmployeeGroupByModel;
 import in.dev.gmsk.model.GroupByModel;
 
 import java.sql.Connection;
