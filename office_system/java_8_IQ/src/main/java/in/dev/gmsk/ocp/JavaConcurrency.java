@@ -39,7 +39,7 @@ class JavaConcurrency {
     }
 
 
-    /* Concurrency and Streams and parallel() */
+    /* Concurrency and Streams and parallel() REF : https://coderanch.com/t/776445/certification/Concurrency-Streams-parallel-correct-understanding */
 
     static void howTheStreamsWork() {
 
