@@ -33,4 +33,9 @@ class JavaConcurrencyTest {
     void parallelDemo() {
         JavaConcurrency.parallelDemo();
     }
+
+    @Test
+    void howTheStreamsWork(){
+        JavaConcurrency.howTheStreamsWork();
+    }
 }
