@@ -28,4 +28,9 @@ class JavaConcurrencyTest {
 
         System.out.println("integers = " + integers);
     }
+
+    @Test
+    void parallelDemo() {
+        JavaConcurrency.parallelDemo();
+    }
 }
