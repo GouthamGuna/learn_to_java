@@ -5,15 +5,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class JavaConcurrency {
 
     /*
-    *    Java Study Guide OCP "Real World Scenario: Avoiding Stateful Streams"
-    *
-    *    stream should not modify external to pipeline objects.
-    *    Ideally pipeline should get a value, reduce it, and return a result, for example, do not accumulate in some external collection.
-    * */
+     *    Java Study Guide OCP "Real World Scenario: Avoiding Stateful Streams"
+     *
+     *    stream should not modify external to pipeline objects.
+     *    Ideally pipeline should get a value, reduce it, and return a result, for example, do not accumulate in some external collection.
+     * */
 
     public static List<Integer> addValues(IntStream source) {
 
@@ -29,11 +30,32 @@ public class JavaConcurrency {
 
     /* A much better name would be */
 
-    public static List<Integer> muchBetterAddValues(IntStream stream){
+    public static List<Integer> muchBetterAddValues(IntStream stream) {
         return stream.filter(JavaConcurrency::isEven).boxed().collect(Collectors.toList());
     }
 
-    private static boolean isEven(int n){
+    private static boolean isEven(int n) {
         return (n % 2 == 0); //(n & 1) == 0
+    }
+
+
+    /* Concurrency and Streams and parallel() */
+
+   static void  howTheStreamsWork(){
+
+   }
+
+    static void parallelDemo() {
+
+        Stream.iterate(0, x -> x + 1)//.parallel()
+                .limit(100)
+                .forEach(x -> {
+                    try {
+                        System.out.println("x = " + x);
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        System.out.println(x + "\t" + Thread.currentThread().getName());
+                    }
+                });
     }
 }
