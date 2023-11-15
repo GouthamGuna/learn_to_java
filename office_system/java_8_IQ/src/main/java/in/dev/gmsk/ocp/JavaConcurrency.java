@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class JavaConcurrency {
+class JavaConcurrency {
 
     /*
      *    Java Study Guide OCP "Real World Scenario: Avoiding Stateful Streams"
@@ -16,7 +16,7 @@ public class JavaConcurrency {
      *    Ideally pipeline should get a value, reduce it, and return a result, for example, do not accumulate in some external collection.
      * */
 
-    public static List<Integer> addValues(IntStream source) {
+    static List<Integer> addValues(IntStream source) {
 
         List<Integer> data = Collections.synchronizedList(new ArrayList<>());
 
@@ -30,7 +30,7 @@ public class JavaConcurrency {
 
     /* A much better name would be */
 
-    public static List<Integer> muchBetterAddValues(IntStream stream) {
+    static List<Integer> muchBetterAddValues(IntStream stream) {
         return stream.filter(JavaConcurrency::isEven).boxed().collect(Collectors.toList());
     }
 
@@ -41,9 +41,45 @@ public class JavaConcurrency {
 
     /* Concurrency and Streams and parallel() */
 
-   static void  howTheStreamsWork(){
+    static void howTheStreamsWork() {
 
-   }
+        Stream<Integer> streamOne = Stream.iterate(0, x -> x + 1);
+        System.out.println("streamOne = " + streamOne);
+
+        Stream<Integer> streamTwo = streamOne.limit(100);
+        System.out.println("streamTwo = " + streamTwo);
+
+        Stream<Integer> streamThree = streamTwo.peek(n -> show(n, "streamThree"));
+        System.out.println("streamThree = " + streamThree);
+
+        Stream<Integer> streamFour = streamThree.parallel();
+        System.out.println("streamFour = " + streamFour);
+
+        Stream<Integer> streamFive = streamFour.peek(n -> show(n, "streamFive"));
+        System.out.println("streamFive = " + streamFive);
+
+        // For dramatic effect:
+        delay(2);
+        System.out.println("Calling terminal operation:");
+        delay(2);
+
+        streamFive.forEach(n -> {
+            delay(1);
+            show(n, "terminal");
+        });
+    }
+
+    private static void show(int n, String label) {
+        System.out.println(label + ":\t" + n + "\t" + Thread.currentThread().getName());
+    }
+
+    private static void delay(int seconds) {
+        try {
+            Thread.sleep(1000 * seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     static void parallelDemo() {
 
