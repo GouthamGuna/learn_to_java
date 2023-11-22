@@ -5,18 +5,14 @@ public class TCSInterviewTest1 {
      static int countingVowels(String values){
         int count = 0;
 
-         if(0 > values.length()){
-             return count;
-         }
-
          for(int i = 0; i < values.length(); i++){
 
-            char ch = values.charAt(i);
+             char ch = values.charAt(i);
 
-            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
-                count++;
-            }
-        }
+             if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
+                 count++;
+             }
+         }
 
         return count;
     }
