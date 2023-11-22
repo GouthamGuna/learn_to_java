@@ -21,7 +21,7 @@ public class TCSInterviewTest1 {
         return count;
     }
 
-    static Long countingVowelsImplLambada(String values){
+    static Long countingVowelsImplLambda(String values){
 
         return values.chars().filter(i -> i == 'a' || i == 'e' || i == 'i'
                 || i == 'o' || i == 'u').count();
