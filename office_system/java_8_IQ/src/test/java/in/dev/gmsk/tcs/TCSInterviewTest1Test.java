@@ -17,11 +17,11 @@ class TCSInterviewTest1Test {
     }
 
     @Test
-    void countingVowelsImplLambada() {
+    void testCountingVowelsImplLambda() {
         String Values = "String";
         assertNotNull(Values);
 
-        Long aLong = TCSInterviewTest1.countingVowelsImplLambada(Values);
+        Long aLong = TCSInterviewTest1.countingVowelsImplLambda(Values);
 
         assertEquals(1, aLong);
     }
