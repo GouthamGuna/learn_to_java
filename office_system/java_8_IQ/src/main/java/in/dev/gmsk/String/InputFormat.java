@@ -1,5 +1,7 @@
 package in.dev.gmsk.String;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -30,5 +32,20 @@ public class InputFormat {
         URL urlInstance = new URL(URLEncoder.encode(url, "UTF-8"));
 
         return urlInstance.toString();
+    }
+
+    static void learnJSEngineInJava(int a, int b) throws Exception{
+
+        ScriptEngineManager scriptEngineManager =
+                new ScriptEngineManager();
+
+        ScriptEngine scriptEngine =
+                scriptEngineManager.getEngineByName("javascript");
+
+        String script = "function add(a, b) { return a + b; }";
+        scriptEngine.eval(script);
+
+        Object result = scriptEngine.eval("add("+a+", "+b+")");
+        System.out.println(result);
     }
 }
