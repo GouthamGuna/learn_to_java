@@ -31,4 +31,11 @@ class InputFormatTest {
                 InputFormat.URLEncode(Base_URL+query_URL)
         );
     }
+
+    @Test
+    void testLearnJSEngineInJava() throws Exception{
+        int a = 10;
+        int b = 20;
+        InputFormat.learnJSEngineInJava(a,b);
+    }
 }
