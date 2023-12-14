@@ -1,5 +1,8 @@
 package in.dev.gmsk;
 
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import in.dev.gmsk.abstraction.MyClass;
 import in.dev.gmsk.abstraction.MyInterface;
 import io.github.gaeqs.javayoutubedownloader.JavaYoutubeDownloader;
@@ -10,10 +13,11 @@ import io.github.gaeqs.javayoutubedownloader.stream.download.StreamDownloader;
 
 import java.io.File;
 import java.util.Comparator;
+import java.util.concurrent.ExecutionException;
 
 public class JavaEightApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException {
         System.out.println("Hello Lunar *)");
 
         MyInterface object = new MyClass();
@@ -25,6 +29,8 @@ public class JavaEightApplication {
         System.out.println("output = " + output);
 
         System.out.println(object.methodD());
+
+        JavaEightApplication.moreCache();
     }
 
     public static boolean download(String url, File folder) {
@@ -45,5 +51,25 @@ public class JavaEightApplication {
         //Runs the downloader.
         new Thread(downloader).start();
         return true;
+    }
+
+    public static void moreCache() throws ExecutionException {
+
+        LoadingCache<String, Integer> cache =
+                CacheBuilder.newBuilder().build(new CacheLoader<String, Integer>() {
+            @Override
+            public Integer load(String key) {
+                return key.length();
+            }
+        });
+        cache.get("gmsk");
+        cache.put("gs", 4);
+        System.err.println(cache.get("gmsk"));
+        System.err.println(cache.get("gowthamsankar"));
+    }
+
+    public static void GuavaCacheTest () {
+
+
     }
 }
