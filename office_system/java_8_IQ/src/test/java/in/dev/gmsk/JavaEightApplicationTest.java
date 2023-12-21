@@ -26,4 +26,20 @@ class JavaEightApplicationTest {
 
         JavaEightApplication.download(URL, filePath);
     }
+
+    @Test
+    void testStringContains() {
+        String db_value_one = "https://raw.githubusercontent.com/CERPSoftwareSolutions/webimage/main/admin.jpg";
+        String db_value_two = "";
+        String db_value_third  = "C:\\Users\\User\\Desktop\\clientlogo\\CERP.png";
+        boolean b = JavaEightApplication.testStringContains(db_value_third);
+
+       assertEquals(true, b);
+    }
+
+    @Test
+    void countStringObject() {
+        JavaEightApplication.countStringObject();
+        assertTrue(true);
+    }
 }
