@@ -1,5 +1,6 @@
 package in.dev.gmsk;
 
+import in.dev.gmsk.model.Employee;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -41,5 +42,21 @@ class JavaEightApplicationTest {
     void countStringObject() {
         JavaEightApplication.countStringObject();
         assertTrue(true);
+    }
+
+    @Test
+    void testingJsonAPI() {
+
+        Employee employee = new Employee();
+        employee.setId(1111);
+        employee.setName("Gowtham Sankar G");
+        employee.setGender("Male");
+        employee.setDesignation("Software Developer");
+
+        assertNotNull(employee);
+
+        String s = JavaEightApplication.testingJsonAPI(employee);
+
+        System.out.println("s = " + s);
     }
 }
