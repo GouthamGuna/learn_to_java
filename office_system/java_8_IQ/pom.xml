@@ -14,6 +14,7 @@
         <lombok.version>1.18.24</lombok.version>
         <sonarqube.version>5.0</sonarqube.version>
         <guava.version>32.1.2-jre</guava.version>
+        <json.verson>2.0.0</json.verson>
         <jasperreports.version>6.17.0</jasperreports.version>
     </properties>
 
@@ -75,6 +76,12 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.json.bind</groupId>
+            <artifactId>jakarta.json.bind-api</artifactId>
+            <version>${json.verson}</version>
         </dependency>
 
     </dependencies>
