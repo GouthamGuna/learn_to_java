@@ -12,6 +12,8 @@ import io.github.gaeqs.javayoutubedownloader.decoder.MultipleDecoderMethod;
 import io.github.gaeqs.javayoutubedownloader.stream.StreamOption;
 import io.github.gaeqs.javayoutubedownloader.stream.YoutubeVideo;
 import io.github.gaeqs.javayoutubedownloader.stream.download.StreamDownloader;
+import jakarta.json.bind.Jsonb;
+import jakarta.json.bind.JsonbBuilder;
 
 import java.io.File;
 import java.util.Comparator;
@@ -137,5 +139,10 @@ public class JavaEightApplication {
         employee.setName(new StringBuilder(empFirstName).toString().toUpperCase().trim());
 
         System.out.println("employee = " + employee.toString());
+    }
+
+    static String testingJsonAPI(Employee employee){
+        Jsonb jsonb = JsonbBuilder.create();
+        return jsonb.toJson(employee);
     }
 }
