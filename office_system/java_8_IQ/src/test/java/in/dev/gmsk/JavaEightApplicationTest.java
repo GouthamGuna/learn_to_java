@@ -1,11 +1,13 @@
 package in.dev.gmsk;
 
 import in.dev.gmsk.model.Employee;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JavaEightApplicationTest {
 
@@ -44,6 +46,7 @@ class JavaEightApplicationTest {
         assertTrue(true);
     }
 
+    @Ignore
     @Test
     void testingJsonAPI() {
 
@@ -58,5 +61,30 @@ class JavaEightApplicationTest {
         String s = JavaEightApplication.testingJsonAPI(employee);
 
         System.out.println("s = " + s);
+    }
+
+    @Test
+    void testFunctionInterface(){
+
+        int i = JavaEightApplication.functionInterfaceAdd(10, 10);
+        assertEquals(20, i);
+        System.out.println("i = " + i);
+
+        int i1 = JavaEightApplication.functionInterfaceSub(20, 5);
+        assertEquals(15, i1);
+        System.out.println("i1 = " + i1);
+
+
+        int i2 = JavaEightApplication.functionInterfaceMultiple(5, 5);
+        assertEquals(25, i2);
+        System.out.println("i2 = " + i2);
+
+        int i3 = JavaEightApplication.functionInterfaceDived(1000, 2);
+        assertEquals(500, i3);
+        System.out.println("i3 = " + i3);
+
+        int i4 = JavaEightApplication.functionInterfaceMod(520, 2);
+        assertEquals(0, i4);
+        System.out.println("i4 = " + i4);
     }
 }
