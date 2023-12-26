@@ -7,6 +7,7 @@ import com.google.common.cache.LoadingCache;
 import in.dev.gmsk.abstraction.MyClass;
 import in.dev.gmsk.abstraction.MyInterface;
 import in.dev.gmsk.model.Employee;
+import in.dev.gmsk.service.Calculator;
 import io.github.gaeqs.javayoutubedownloader.JavaYoutubeDownloader;
 import io.github.gaeqs.javayoutubedownloader.decoder.MultipleDecoderMethod;
 import io.github.gaeqs.javayoutubedownloader.stream.StreamOption;
@@ -14,6 +15,7 @@ import io.github.gaeqs.javayoutubedownloader.stream.YoutubeVideo;
 import io.github.gaeqs.javayoutubedownloader.stream.download.StreamDownloader;
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
+import lombok.val;
 
 import java.io.File;
 import java.util.Comparator;
@@ -145,4 +147,40 @@ public class JavaEightApplication {
         Jsonb jsonb = JsonbBuilder.create();
         return jsonb.toJson(employee);
     }
+
+    static int functionInterfaceAdd(int x, int y){
+
+        Calculator calculator = Integer::sum;
+
+        return calculator.calculate(x, y);
+    }
+
+    static int functionInterfaceSub(int x, int y){
+
+        Calculator calculator = (a,b) -> a - b;
+
+        return calculator.calculate(x, y);
+    }
+
+    static int functionInterfaceMultiple(int x, int y){
+
+        Calculator calculator = (a,b) -> a * b;
+
+        return calculator.calculate(x, y);
+    }
+
+    static int functionInterfaceDived(int x, int y){
+
+        Calculator calculator = (a,b) -> a / b;
+
+        return calculator.calculate(x, y);
+    }
+
+    static int functionInterfaceMod(int x, int y){
+
+        Calculator calculator = (a,b) -> a % b;
+
+        return calculator.calculate(x, y);
+    }
+
 }
