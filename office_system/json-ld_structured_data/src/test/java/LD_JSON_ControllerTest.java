@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class LD_JSON_ControllerTest {
 
     @Test
-    void getLdJsonObject() throws Exception {
+    void getLdJsonObject() {
         String result = LD_JSON_Controller.getLdJsonObject();
         assertNotNull(result);
         System.out.println("result = " + result);
