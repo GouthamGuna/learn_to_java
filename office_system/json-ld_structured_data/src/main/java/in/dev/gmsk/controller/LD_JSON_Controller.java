@@ -8,6 +8,12 @@ import in.dev.gmsk.model.Publisher;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * @author gowtham_sankar gunasekaran
+ * @see <a href="https://gouthamguna.github.io/in/">JSON-LD's ability to be embedded in a separate script tag allows it to be easily added or removed without modifying the HTML markup, providing greater flexibility and modularity compared to Microdata.</a>
+ * @since 1.0
+ */
+
 public class LD_JSON_Controller {
 
     private static final LD_JSON returnInstance;
@@ -41,7 +47,7 @@ public class LD_JSON_Controller {
         publisher.setLogos(OrganizationLogo);
 
         returnInstance.setType("WebSite");
-        returnInstance.setHeadline("CERPSOFT");
+        returnInstance.setHeadline("CERP");
         returnInstance.setAuthor(author);
         returnInstance.setPublisher(publisher);
 
