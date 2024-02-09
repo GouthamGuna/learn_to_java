@@ -1,6 +1,6 @@
 package in.dev.gmsk.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import in.dev.gmsk.model.Author;
 import in.dev.gmsk.model.LD_JSON;
 import in.dev.gmsk.model.Publisher;
@@ -10,25 +10,26 @@ import java.util.List;
 
 public class LD_JSON_Controller {
 
-    private static final LD_JSON instance;
+    private static final LD_JSON returnInstance;
     private static final Author author;
     private static final Publisher publisher;
     private static final List<String> OrganizationLogo;
+    private static final Gson GSON;
 
     static {
         author = new Author();
-        instance = new LD_JSON();
+        returnInstance = new LD_JSON();
         publisher = new Publisher();
 
         OrganizationLogo = Arrays.asList(
                 "https://www.cerpsoft.in/wp-content/uploads/2022/01/cropped-CERP-Logo_wkgFile-Ver1.1.png",
-                "https://github.com/CERPSoftwareSolutions/webimage/blob/main/cerplogo.png"
+                "https://raw.githubusercontent.com/CERPSoftwareSolutions/webimage/main/cerplogo.png"
         );
+
+        GSON = new Gson();
     }
 
-    public static String getLdJsonObject() throws Exception {
-
-        String returnString = "";
+    public static String getLdJsonObject() {
 
         author.setName("GOWTHAM SANKAR GUNASEKARAN");
         author.setJobTitle("Java Full Stack Developer.");
@@ -37,16 +38,13 @@ public class LD_JSON_Controller {
 
         publisher.setName("CERP Software Solutions");
         publisher.setUrl("https://www.cerpsoft.in/");
-        publisher.setLogo(OrganizationLogo);
+        publisher.setLogos(OrganizationLogo);
 
-        instance.setType("WebSite");
-        instance.setHeadline("CERPSOFT");
-        instance.setAuthor(author);
-        instance.setPublisher(publisher);
+        returnInstance.setType("WebSite");
+        returnInstance.setHeadline("CERPSOFT");
+        returnInstance.setAuthor(author);
+        returnInstance.setPublisher(publisher);
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        returnString = objectMapper.writeValueAsString(instance);
-
-        return returnString;
+        return GSON.toJson(returnInstance);
     }
 }
