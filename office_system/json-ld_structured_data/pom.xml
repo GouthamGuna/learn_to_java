@@ -38,12 +38,11 @@
         <lombok.version>1.18.30</lombok.version>
         <junit.version>5.10.2</junit.version>
         <lombok.plugin.version>1.18.20.0</lombok.plugin.version>
-        <jackson.version>2.16.0</jackson.version>
+        <gson.version>2.10.1</gson.version>
     </properties>
 
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -51,7 +50,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -67,10 +65,11 @@
         </dependency>
 
         <dependency>
-            <groupId>com.fasterxml.jackson.dataformat</groupId>
-            <artifactId>jackson-dataformat-xml</artifactId>
-            <version>${jackson.version}</version>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
         </dependency>
+
 
     </dependencies>
 
