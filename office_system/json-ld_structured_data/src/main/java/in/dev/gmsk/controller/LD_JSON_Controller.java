@@ -20,12 +20,19 @@ public class LD_JSON_Controller {
     private static final Author author;
     private static final Publisher publisher;
     private static final List<String> OrganizationLogo;
+    private static final List<String> authorURLS;
     private static final Gson GSON;
 
     static {
         author = new Author();
         returnInstance = new LD_JSON();
         publisher = new Publisher();
+
+        authorURLS = Arrays.asList(
+                "https://gouthamguna.github.io/in/",
+                "https://github.com/GouthamGuna",
+                "https://mec.edu.in/news-events/students-techtalk-on-electric-power-transmission-and-distribution/"
+        );
 
         OrganizationLogo = Arrays.asList(
                 "https://www.cerpsoft.in/wp-content/uploads/2022/01/cropped-CERP-Logo_wkgFile-Ver1.1.png",
@@ -39,7 +46,8 @@ public class LD_JSON_Controller {
 
         author.setName("GOWTHAM SANKAR GUNASEKARAN");
         author.setJobTitle("Java Full Stack Developer.");
-        author.setUrl("https://gouthamguna.github.io/in/");
+        author.setUrls(authorURLS);
+        author.setEmailId("ggowthamsankareee@gmail.com");
         author.setImage("https://gouthamguna.github.io/in/images/profilepic.jpg");
 
         publisher.setName("CERP Software Solutions");
