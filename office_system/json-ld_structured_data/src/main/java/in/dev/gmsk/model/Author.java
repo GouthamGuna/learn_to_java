@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 /**
  * @author gowtham_sankar gunasekaran
  * @see <a href="https://gouthamguna.github.io/in/">GMSK</a>
@@ -18,6 +20,7 @@ public class Author {
     public final String type = "Person";
     public String name;
     public String jobTitle;
-    public String url;
+    public String emailId;
     public String image;
+    public List<String> urls;
 }
