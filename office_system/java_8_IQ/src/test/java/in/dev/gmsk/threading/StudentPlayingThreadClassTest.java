@@ -5,6 +5,7 @@ import in.dev.gmsk.model.StudentModel;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 class StudentPlayingThreadClassTest {
 
@@ -21,7 +22,7 @@ class StudentPlayingThreadClassTest {
     void getAllStudentListTest() {
 
         List<StudentModel> allStudentList =
-                StudentPlayingThreadClass.getAllStudentList(jdbcConnection);
+                StudentPlayingThreadClass.getAllStudentList(jdbcConnection).collect(Collectors.toList());
 
         System.out.println("allStudentList = " + allStudentList);
     }

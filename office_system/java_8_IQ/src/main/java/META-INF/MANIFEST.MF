@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Class-Path: failureaccess-1.0.1.jar gson-2.10.1.jar guava-32.1.2-jre.j
+ ar jfreechart-1.0.19.jar javax.inject-1.jar fastjson-1.2.79.jar j2obj
+ c-annotations-2.8.jar JavaYoutubeDownloader-1.2.3.jar jcommon-1.0.23.
+ jar mysql-connector-j-8.0.33.jar ecj-3.21.0.jar jackson-databind-2.12
+ .2.jar castor-core-1.4.1.jar checker-qual-3.33.0.jar castor-xml-1.4.1
+ .jar jsr305-1.3.9.jar commons-collections4-4.2.jar commons-lang3-3.4.
+ jar jakarta.json.bind-api-2.0.0.jar commons-collections-3.2.1.jar jac
+ kson-annotations-2.12.2.jar commons-digester-2.1.jar jackson-core-2.1
+ 2.2.jar commons-logging-1.1.1.jar protobuf-java-3.21.9.jar listenable
+ future-9999.0-empty-to-avoid-conflict-with-guava.jar commons-beanutil
+ s-1.9.4.jar jasperreports-6.17.0.jar itext-2.1.7.js8.jar bcprov-jdk15
+ on-1.64.jar error_prone_annotations-2.18.0.jar
+Main-Class: in.dev.gmsk.threading.LearnExecutorService
+
