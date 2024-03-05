@@ -3,6 +3,7 @@ package in.dev.gmsk.threading;
 import in.dev.gmsk.jdbc.JDBCConnection;
 import in.dev.gmsk.model.StudentModel;
 
+import java.util.OptionalInt;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
@@ -15,6 +16,8 @@ public class LearnExecutorService {
     private static final String password = "root";
     private static final JDBCConnection jdbcConnection;
     private static final int nThread = Runtime.getRuntime().availableProcessors();
+    private static final int asize = 10; // initial size of array is 10
+    private String[][] tab;
 
     static {
         jdbcConnection = new JDBCConnection(url, user, password);
@@ -25,8 +28,8 @@ public class LearnExecutorService {
         if (args.length > 0 && validateTheNumber(args[0])) {
 
             for (int i = 0; i < Integer.parseInt(args[0]); i++) {
-                 // demoNewFixedThreadPool(i);
-                 demoThread(i);
+                // demoNewFixedThreadPool(i);
+                demoThread(i);
             }
         } else {
             System.out.println("No command line arguments were provided...");
@@ -73,5 +76,39 @@ public class LearnExecutorService {
             System.err.print(e.getMessage());
         }
         return returnFlag;
+    }
+
+    public OptionalInt findInt(String k) {
+        try {
+
+            String s = findValue(k);
+
+            if (s == null) {
+                return OptionalInt.empty();
+            }
+
+            return OptionalInt.of(Integer.parseInt(s));
+
+        } catch (Throwable e) {
+            return OptionalInt.empty();
+        }
+    }
+
+    private String findValue(String key) {
+        return findValue(key, null);
+    }
+
+    private String findValue(String k, String Default) {
+        if (k == null)
+            return Default;
+        k = k.toLowerCase();
+        for (int i = 0; i < asize; ++i) {
+            if (tab[i][0] == null) {
+                return Default;
+            } else if (k.equals(tab[i][0])) {
+                return tab[i][1];
+            }
+        }
+        return Default;
     }
 }
