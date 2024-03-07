@@ -1,10 +1,10 @@
 # tiA stock updating calculation
 
-     | itemId |  poQty   | receivedQty | receivedQty | poUpdatedQty
-     |:-------|:--------:|------------:|------------:|------------:
-     | 934    | 30       | 10          | 20          | 10
-     | 934    | 30       | 10          | 10          | 10
-     | 934    | 30       | 10          | 0           |
+     | itemId |  poQty   | receivedQty | receivedQty | poUpdatedQty |
+     |:-------|:--------:|------------:|------------:|-------------:|
+     | 934    | 30       | 10          | 20          | 10           |
+     | 934    | 30       | 10          | 10          | 10           |
+     | 934    | 30       | 10          | 0           |              |
 
 
      actual_poqty=30;
