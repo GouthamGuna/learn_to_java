@@ -31,3 +31,23 @@
 
      if po_received_qty !=0:
      	remaining_minmiumqty=actual_projectsqty+actual_minimumqty-po_updated_qty; 15+15-20=10
+		
+# Testing 
+
+ test case : 1 
+
+	int actualProjectsQty = 30, int actualMinimumQty = 15, int poReceivedQty = 10, int poUpdatedQty = 0
+	
+	result : remainingProjectQty = 30 : and updatingProjectQty = 10 and remainingMinmiumQty = 45
+	
+ test case : 2
+
+	int actualProjectsQty = 30, int actualMinimumQty = 15, int poReceivedQty = 10, int poUpdatedQty = 10
+	
+	result : remainingProjectQty = 20 : and updatingProjectQty = 10 and remainingMinmiumQty = 35
+		
+ test case : 3
+
+	int actualProjectsQty = 30, int actualMinimumQty = 15, int poReceivedQty = 10, int poUpdatedQty = 20
+	
+	result : remainingProjectQty = 10 : and updatingProjectQty = 10 and remainingMinmiumQty = 25
