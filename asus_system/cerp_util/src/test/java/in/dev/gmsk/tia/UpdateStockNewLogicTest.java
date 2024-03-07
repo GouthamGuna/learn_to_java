@@ -8,7 +8,7 @@ class UpdateStockNewLogicTest {
 
     @Test
     void stockUpdatingCalculation() {
-        UpdateStockNewLogic.stockUpdatingCalculation( 30,15, 10, 0 );
+        UpdateStockNewLogic.stockUpdatingCalculation( 45,15, 5, 0 );
         assertTrue( true );
     }
 }
