@@ -1,7 +1,7 @@
 package in.dev.gmsk.configuration;
 
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpServletResponseWrapper;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponseWrapper;
 
 /**
  * @author gowtham_sankar gunasekaran
@@ -14,7 +14,7 @@ public class HttpResponseWrapper extends HttpServletResponseWrapper {
     /**
      * Constructs a response adaptor wrapping the given response.
      *
-     * @param response the {@link jakarta.servlet.http.HttpServletResponse} to be wrapped.
+     * @param response the {@link HttpServletResponse} to be wrapped.
      * @throws IllegalArgumentException if the response is null
      */
 

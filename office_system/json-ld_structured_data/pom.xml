@@ -39,7 +39,7 @@
         <junit.version>5.10.2</junit.version>
         <lombok.plugin.version>1.18.20.0</lombok.plugin.version>
         <gson.version>2.10.1</gson.version>
-        <jakarta.version>6.0.0</jakarta.version>
+        <javax.version>4.0.1</javax.version>
     </properties>
 
     <dependencies>
@@ -70,10 +70,11 @@
             <artifactId>gson</artifactId>
             <version>${gson.version}</version>
         </dependency>
+
         <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <version>${jakarta.version}</version>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.version}</version>
         </dependency>
 
     </dependencies>

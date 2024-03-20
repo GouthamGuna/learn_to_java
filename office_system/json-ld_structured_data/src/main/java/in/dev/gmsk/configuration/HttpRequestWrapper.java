@@ -1,7 +1,7 @@
 package in.dev.gmsk.configuration;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletRequestWrapper;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 
 import java.util.Hashtable;
 import java.util.Map;
@@ -15,12 +15,6 @@ import java.util.Set;
 
 public class HttpRequestWrapper extends HttpServletRequestWrapper {
 
-    /**
-     * Constructs a request object wrapping the given request.
-     *
-     * @param request the {@link jakarta.servlet.http.HttpServletRequest} to be wrapped.
-     * @throws IllegalArgumentException if the request is null
-     */
     public HttpRequestWrapper(HttpServletRequest request) {
         super(request);
     }
