@@ -24,4 +24,13 @@ class StudentControllerTest {
         CONTROLLER.getAllStudentsList().toList().forEach( System.out::println );
         assertTrue( true );
     }
+
+    @Test
+    void testGetStudentAvatar(){
+        String expected = "(NULL)";
+        String actual = CONTROLLER.getStudentAvatar(1);
+
+        assertEquals(expected, actual);
+        System.out.println("studentAvatarPath = " + actual);
+    }
 }
