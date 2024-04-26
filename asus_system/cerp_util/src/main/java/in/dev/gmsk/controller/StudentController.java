@@ -9,10 +9,14 @@ public class StudentController {
     private static final StudentServiceImpl STUDENT_SERVICE = new StudentServiceImpl();
 
     public String saveStudent(Students student) {
-        return STUDENT_SERVICE.saveStudentData( student );
+        return STUDENT_SERVICE.saveStudentData(student);
     }
 
     public Stream<Students> getAllStudentsList() {
         return STUDENT_SERVICE.getAllStudentsList();
+    }
+
+    public String getStudentAvatar(int studentId) {
+        return STUDENT_SERVICE.getStudentAvatar(studentId);
     }
 }
