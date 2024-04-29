@@ -1,8 +1,9 @@
 package in.dev.gmsk.String;
 
 public class SHA256Example {
+
     public static void main(String[] args) {
-            String convertByte = "GMSK";
+        String convertByte = "GMSK";
         int i = byte4int(convertByte.toCharArray());
         System.out.println("i = " + i);
     }

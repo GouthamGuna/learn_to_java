@@ -8,6 +8,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Scanner;
 import java.util.UUID;
+import java.util.stream.IntStream;
 
 public class InputFormat {
 
@@ -34,7 +35,7 @@ public class InputFormat {
         return urlInstance.toString();
     }
 
-    static void learnJSEngineInJava(int a, int b) throws Exception{
+    static void learnJSEngineInJava(int a, int b) throws Exception {
 
         ScriptEngineManager scriptEngineManager =
                 new ScriptEngineManager();
@@ -45,7 +46,22 @@ public class InputFormat {
         String script = "function add(a, b) { return a + b; }";
         scriptEngine.eval(script);
 
-        Object result = scriptEngine.eval("add("+a+", "+b+")");
+        Object result = scriptEngine.eval("add(" + a + ", " + b + ")");
         System.out.println(result);
+    }
+
+    static String reverseString(String stringValue) {
+
+        byte[] asAByteArray = stringValue.getBytes();
+        byte[] result = new byte[asAByteArray.length];
+
+        /*for (int i = 0; i < asAByteArray.length; i++) {
+            result[i] = asAByteArray[asAByteArray.length - i - 1];
+        }*/
+
+        IntStream.range(0, asAByteArray.length)
+                .forEach(i -> result[i] = asAByteArray[asAByteArray.length - i - 1]);
+
+        return new String(result);
     }
 }

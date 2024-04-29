@@ -38,4 +38,12 @@ class InputFormatTest {
         int b = 20;
         InputFormat.learnJSEngineInJava(a,b);
     }
+
+    @Test
+    void testReverseString(){
+        String actual = InputFormat.reverseString("TCS");
+        String expected = "SCT";
+
+        assertEquals(actual, expected);
+    }
 }
