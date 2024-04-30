@@ -3,6 +3,9 @@ package in.dev.gmsk.service;
 import in.dev.gmsk.model.Students;
 import in.dev.gmsk.repository.StudentRepo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.BiFunction;
 import java.util.stream.Stream;
@@ -41,4 +44,15 @@ public class StudentServiceImpl {
             tableOne.get(studentId).isEmpty() || (tableOne.get(studentId).isBlank() &&
                     (null != tableOne.get(studentId)) && tableOne.get(studentId).equalsIgnoreCase(" "));
 
+    public Stream<String> getString() {
+        return Stream.of("Gowtham", "Sankar", "GMSK", "Mani", "Jay", "Kumar", "saran", "karan");
+    }
+
+    public List<Integer> getFeeAmount() {
+        return Arrays.asList(1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000);
+    }
+
+    public List<Integer> getTransportFee() {
+        return Arrays.asList(1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000);
+    }
 }
