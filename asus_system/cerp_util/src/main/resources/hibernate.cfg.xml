@@ -5,7 +5,7 @@
     <session-factory>
         <!-- JDBC Database connection settings -->
         <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mariadb://localhost:3306/dev_gmsk_db?useSSL=false</property>
+        <property name="connection.url">jdbc:mariadb://localhost:3306/dev_gmsk?useSSL=false</property>
         <property name="connection.username">root</property>
         <property name="connection.password">asus@root</property>
         <!-- JDBC connection pool settings ... using built-in test pool -->
