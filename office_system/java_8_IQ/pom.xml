@@ -17,6 +17,7 @@
         <json.verson>2.0.0</json.verson>
         <jasperreports.version>6.17.0</jasperreports.version>
         <gson.version>2.10.1</gson.version>
+        <mail.version>1.6.2</mail.version>
     </properties>
 
     <build>
@@ -89,6 +90,18 @@
             <groupId>jakarta.json.bind</groupId>
             <artifactId>jakarta.json.bind-api</artifactId>
             <version>${json.verson}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.axet</groupId>
+            <artifactId>vget</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>${mail.version}</version>
         </dependency>
 
     </dependencies>
